@@ -21,6 +21,28 @@
 
         .noise{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px)}
 
+        /* ===== МЕРЦАЮЩИЕ ЗВЁЗДЫ (как на NeuralClient) ===== */
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.15; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+        .animate-twinkle {
+            animation: twinkle 3s ease-in-out infinite;
+            box-shadow: 0 0 8px var(--red), 0 0 16px var(--red-g);
+        }
+        .star-field {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .star-field span {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--red);
+        }
+
         #stars-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
 
         .orb{position:fixed;border-radius:50%;filter:blur(140px);pointer-events:none;z-index:0;animation:orbFloat 25s ease-in-out infinite}
@@ -179,7 +201,6 @@
         .account-close:hover{color:var(--red);transform:rotate(90deg)}
         .account-body{flex:1;overflow-y:auto;padding:28px 28px 20px;position:relative;z-index:1}
 
-        /* Контейнер для звёзд в аккаунте */
         #account-stars{position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:hidden}
         #account-stars canvas{width:100%;height:100%;display:block}
 
@@ -227,7 +248,6 @@
         .register-modal .btn-cancel{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:rgba(255,255,255,0.25);font-size:13px;font-family:var(--mono);cursor:pointer;transition:0.3s}
         .register-modal .btn-cancel:hover{color:rgba(255,255,255,0.4);border-color:rgba(255,255,255,0.08)}
 
-        /* ===== СКРЫТЫЙ ФАЙЛ ДЛЯ АВАТАРКИ ===== */
         #avatarInput{display:none}
 
         @media(max-width:1100px){.features-grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:repeat(2,1fr);max-width:600px}.package-grid{grid-template-columns:repeat(2,1fr)}}
@@ -242,6 +262,7 @@
 <div class="orb orb-2"></div>
 <div class="orb orb-3"></div>
 <div class="noise"></div>
+<div class="star-field" id="starField"></div>
 <canvas id="stars-canvas"></canvas>
 
 <div class="container">
@@ -257,7 +278,7 @@
             <a href="#contact">Контакты</a>
             <a href="#" class="btn-outline" onclick="openRegisterModal(event)">Регистрация</a>
             <a href="#" class="btn-outline" onclick="openAccountPanel(event)">Войти</a>
-            <a href="https://www.donationalerts.com/r/megabro69" target="_blank" class="btn-primary">Приобрести доступ</a>
+            <a href="     https://www.donationalerts.com/r/megabozz" target="_blank" class="btn-primary">Приобрести доступ</a>
         </div>
     </header>
 
@@ -270,7 +291,7 @@
                 <h1>Достигай большего.<br>Властвуй с <span data-text="MegaBoss.wtf">MegaBoss.wtf</span></h1>
                 <p>Премиум External для Rust с полным набором функций. Если ты ищешь максимум – ты нашёл его.</p>
                 <div class="hero-buttons">
-                    <a href="https://www.donationalerts.com/r/megabro69" target="_blank" class="btn-primary">Получить доступ <i class="fas fa-arrow-right"></i></a>
+                    <a href="     https://www.donationalerts.com/r/megabozz" target="_blank" class="btn-primary">Получить доступ <i class="fas fa-arrow-right"></i></a>
                     <a href="#" class="btn-outline" onclick="openRegisterModal(event)">Регистрация</a>
                 </div>
                 <div class="hero-stats">
@@ -639,7 +660,7 @@
                     <div class="value">megabro69</div>
                 </div>
             </a>
-            <a href="https://www.donationalerts.com/r/megabro69" target="_blank" class="contact-card">
+            <a href="     https://www.donationalerts.com/r/megabozz" target="_blank" class="contact-card">
                 <div class="contact-icon">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="2"></rect>
@@ -767,7 +788,7 @@
                 <div style="color:#fff;font-weight:600;font-size:14px;font-family:var(--mono);">Discord</div>
                 <div style="color:rgba(255,255,255,0.4);font-size:11px;font-family:var(--mono);">Скопировать ник</div>
             </a>
-            <a href="https://www.donationalerts.com/r/megabro69" target="_blank" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;border:1px solid rgba(255,23,68,0.2);border-radius:16px;background:rgba(0,0,0,0.2);text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(255,23,68,0.5)';this.style.background='rgba(255,23,68,0.06)'" onmouseout="this.style.borderColor='rgba(255,23,68,0.2)';this.style.background='rgba(0,0,0,0.2)'">
+            <a href="     https://www.donationalerts.com/r/megabozz" target="_blank" style="flex:1;display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;border:1px solid rgba(255,23,68,0.2);border-radius:16px;background:rgba(0,0,0,0.2);text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(255,23,68,0.5)';this.style.background='rgba(255,23,68,0.06)'" onmouseout="this.style.borderColor='rgba(255,23,68,0.2)';this.style.background='rgba(0,0,0,0.2)'">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32" style="color:#e574e4;">
                     <rect x="2" y="2" width="20" height="20" rx="4" fill="none" stroke="currentColor" stroke-width="2"></rect>
                     <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">F</text>
@@ -781,12 +802,42 @@
 </div>
 
 <script>
-// ========== ЗВЁЗДЫ НА ГЛАВНОЙ ==========
+// ========== МЕРЦАЮЩИЕ ЗВЁЗДЫ (статичные, как на NeuralClient) ==========
+(function createTwinkleStars() {
+    const field = document.getElementById('starField');
+    if (!field) return;
+    
+    const STAR_COUNT = 60;
+    
+    for (let i = 0; i < STAR_COUNT; i++) {
+        const star = document.createElement('span');
+        const size = Math.random() * 2 + 1;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = (Math.random() * 3) + 's';
+        star.style.animationDuration = (2 + Math.random() * 2.5) + 's';
+        star.style.opacity = 0.3 + Math.random() * 0.7;
+        field.appendChild(star);
+    }
+})();
+
+// ========== CANVAS ЧАСТИЦЫ (медленно притягиваются к курсору) ==========
 const canvas = document.getElementById('stars-canvas');
 const ctx = canvas.getContext('2d');
 let width, height;
 let stars = [];
-const STAR_COUNT = 300;
+const STAR_COUNT = 120;
+
+const ATTRACT_RADIUS = 200;
+const ATTRACT_FORCE = 0.06;
+const ORBIT_SPEED = 0.012;
+const RETURN_FORCE = 0.008;
+const MAX_SPEED = 1.8;
+
+let mouseX = -9999;
+let mouseY = -9999;
 
 function resize() {
     width = canvas.width = window.innerWidth;
@@ -799,10 +850,13 @@ function createStars() {
         stars.push({
             x: Math.random() * width,
             y: Math.random() * height,
-            radius: Math.random() * 1.8 + 0.3,
-            speed: Math.random() * 0.4 + 0.05,
-            opacity: Math.random() * 0.7 + 0.15,
-            direction: Math.random() * 2 * Math.PI
+            radius: Math.random() * 1.4 + 0.4,
+            opacity: Math.random() * 0.5 + 0.2,
+            vx: 0,
+            vy: 0,
+            dx: (Math.random() - 0.5) * 0.35,
+            dy: (Math.random() - 0.5) * 0.35,
+            captured: false
         });
     }
 }
@@ -810,6 +864,15 @@ function createStars() {
 function drawStars() {
     ctx.clearRect(0, 0, width, height);
     for (const star of stars) {
+        if (star.captured) {
+            const g = ctx.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.radius * 4);
+            g.addColorStop(0, `rgba(255, 23, 68, ${star.opacity * 0.5})`);
+            g.addColorStop(1, 'rgba(255, 23, 68, 0)');
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius * 4, 0, 2 * Math.PI);
+            ctx.fillStyle = g;
+            ctx.fill();
+        }
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, 2 * Math.PI);
         ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
@@ -819,12 +882,49 @@ function drawStars() {
 
 function updateStars() {
     for (const star of stars) {
-        star.x += Math.cos(star.direction) * star.speed;
-        star.y += Math.sin(star.direction) * star.speed;
-        if (star.x < -10) star.x = width + 10;
-        if (star.x > width + 10) star.x = -10;
-        if (star.y < -10) star.y = height + 10;
-        if (star.y > height + 10) star.y = -10;
+        const dx = mouseX - star.x;
+        const dy = mouseY - star.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < ATTRACT_RADIUS && mouseX > 0) {
+            star.captured = true;
+            const nx = dx / (dist || 1);
+            const ny = dy / (dist || 1);
+            const force = ATTRACT_FORCE * (dist / ATTRACT_RADIUS);
+            star.vx += nx * force;
+            star.vy += ny * force;
+
+            const tangX = -ny;
+            const tangY = nx;
+            const orbit = ORBIT_SPEED * (1 - dist / ATTRACT_RADIUS);
+            star.vx += tangX * orbit * 5;
+            star.vy += tangY * orbit * 5;
+
+            const minOrbit = 45;
+            if (dist < minOrbit) {
+                const push = (minOrbit - dist) * 0.05;
+                star.vx -= nx * push;
+                star.vy -= ny * push;
+            }
+        } else {
+            star.captured = false;
+            star.vx += (star.dx - star.vx) * RETURN_FORCE;
+            star.vy += (star.dy - star.vy) * RETURN_FORCE;
+        }
+
+        const spd = Math.sqrt(star.vx * star.vx + star.vy * star.vy);
+        if (spd > MAX_SPEED) {
+            star.vx = (star.vx / spd) * MAX_SPEED;
+            star.vy = (star.vy / spd) * MAX_SPEED;
+        }
+
+        star.x += star.vx;
+        star.y += star.vy;
+
+        if (star.x < -20) star.x = width + 20;
+        if (star.x > width + 20) star.x = -20;
+        if (star.y < -20) star.y = height + 20;
+        if (star.y > height + 20) star.y = -20;
     }
 }
 
@@ -833,6 +933,15 @@ function animateStars() {
     drawStars();
     requestAnimationFrame(animateStars);
 }
+
+document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+document.addEventListener('mouseleave', () => {
+    mouseX = -9999;
+    mouseY = -9999;
+});
 
 window.addEventListener('resize', () => { resize(); createStars(); });
 resize();
@@ -897,7 +1006,6 @@ function initAccountStars() {
     });
 }
 
-// Запускаем звёзды в аккаунте после загрузки
 setTimeout(initAccountStars, 100);
 
 // ========== КУРСОР ==========
@@ -1019,7 +1127,6 @@ function handleRegister(event) {
     const username = document.getElementById('regUsername').value.trim();
     const password = document.getElementById('regPassword').value.trim();
 
-    // Проверка на запрещённое имя
     if (username.toLowerCase() === 'megabro69') {
         showToast('Это имя занято. Выберите другое');
         return;
@@ -1057,7 +1164,6 @@ function openAccountPanelWithData(username) {
     const panel = document.getElementById('accountPanel');
     document.getElementById('accountDisplayName').textContent = username;
     
-    // Если есть аватарка — показываем её
     if (avatarDataUrl) {
         document.getElementById('accountAvatar').innerHTML = `<img src="${avatarDataUrl}" alt="avatar">`;
     } else {
@@ -1066,7 +1172,6 @@ function openAccountPanelWithData(username) {
     
     panel.classList.add('open');
     
-    // Перезапускаем звёзды
     setTimeout(initAccountStars, 200);
     
     showToast('Добро пожаловать, ' + username);
@@ -1099,7 +1204,6 @@ function handleAvatarChange(event) {
     event.target.value = '';
 }
 
-// Закрытие панели по клику вне
 document.addEventListener('click', function(e) {
     const panel = document.getElementById('accountPanel');
     if (panel.classList.contains('open')) {
