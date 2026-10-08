@@ -340,7 +340,7 @@
             <a href="#contact">Контакты</a>
             <a href="#" class="btn-outline" onclick="openRegisterModal(event)">Регистрация</a>
             <a href="#" class="btn-outline" onclick="openAccountPanel(event)">Войти</a>
-            <a href="#" onclick="openFunPayModal(event)" class="btn-primary">Приобрести доступ</a>
+            <a href="#" onclick="openBuyModal(event, '30 Дней', 500)" class="btn-primary">Приобрести доступ</a>
         </div>
     </header>
 
@@ -353,7 +353,7 @@
                 <h1>Достигай большего.<br>Властвуй с <span data-text="MegaBoss.wtf">MegaBoss.wtf</span></h1>
                 <p>Премиум External для Rust с полным набором функций. Если ты ищешь максимум – ты нашёл его.</p>
                 <div class="hero-buttons">
-                    <a href="#" onclick="openFunPayModal(event)" class="btn-primary">Получить доступ <i class="fas fa-arrow-right"></i></a>
+                    <a href="#" onclick="openBuyModal(event, '30 Дней', 500)" class="btn-primary">Получить доступ <i class="fas fa-arrow-right"></i></a>
                     <a href="#" class="btn-outline" onclick="openRegisterModal(event)">Регистрация</a>
                 </div>
                 <div class="hero-stats">
@@ -773,7 +773,7 @@
     <div class="cta-block reveal">
         <h2>Готов начать?</h2>
         <p>Присоединяйся к сообществу MegaBoss.wtf и получи полный контроль над игрой.</p>
-        <a href="#" onclick="openFunPayModal(event)" class="btn-primary">Приобрести <i class="fas fa-arrow-right"></i></a>
+        <a href="#" onclick="openBuyModal(event, '30 Дней', 500)" class="btn-primary">Приобрести <i class="fas fa-arrow-right"></i></a>
     </div>
 
     <section class="section" id="contact">
@@ -810,7 +810,7 @@
     <footer class="footer">
         <span>© 2026 MegaBoss.wtf. Все права защищены.</span>
         <span>
-            <a href="#" onclick="openFunPayModal(event)">FunPay</a>
+            <a href="#" onclick="openBuyModal(event, '30 Дней', 500)">FunPay</a>
             <a href="#">Политика</a>
         </span>
     </footer>
@@ -1386,7 +1386,7 @@ document.addEventListener('click', function(e) {
 
 // ========== МОДАЛКА ПОКУПКИ ==========
 function openBuyModal(event, plan, price) {
-    event.preventDefault();
+    if (event) event.preventDefault();
     document.getElementById('buyPlan').textContent = plan;
     document.getElementById('buyPrice').textContent = price + ' ₽';
     const modal = document.getElementById('buyModal');
@@ -1412,8 +1412,7 @@ document.getElementById('buyModal').addEventListener('click', function(e) {
 });
 
 // ========== МОДАЛКА FUNPAY ==========
-function openFunPayModal(event) {
-    if (event) event.preventDefault();
+function openFunPayModal() {
     const m = document.getElementById('funPayModal');
     m.style.display = 'flex';
     const c = document.getElementById('fpContent');
