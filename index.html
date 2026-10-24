@@ -48,27 +48,44 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 
 .container{position:relative;z-index:2;max-width:1300px;margin:0 auto;padding:0 40px 80px}
 
-/* HEADER */
-.header{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:20px 0;border-bottom:1px solid var(--border)}
-.logo{font-size:24px;font-weight:800;font-family:var(--sans);color:var(--accent);letter-spacing:-0.5px;display:flex;align-items:center;text-shadow:0 0 20px var(--accent-glow)}
+/* HEADER - ИСПРАВЛЕНО */
+.header{display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:16px;padding:20px 0;border-bottom:1px solid var(--border);width:100%}
+.logo{font-size:24px;font-weight:800;font-family:var(--sans);color:var(--accent);letter-spacing:-0.5px;display:flex;align-items:center;text-shadow:0 0 20px var(--accent-glow);white-space:nowrap;flex-shrink:0}
 .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;box-shadow:0 0 12px var(--accent);animation:dotPulse 3s ease-in-out infinite;margin-right:8px}
 @keyframes dotPulse{0%,100%{opacity:1;box-shadow:0 0 12px var(--accent)}50%{opacity:0.5;box-shadow:0 0 6px var(--accent)}}
 
-.header-nav{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
-.header-nav a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:14px;font-family:var(--sans);padding:8px 16px;border-radius:8px;transition:.3s;font-weight:500}
+.header-nav{display:flex;align-items:center;flex-wrap:nowrap;gap:6px;justify-content:flex-end;flex:1}
+.header-nav a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;font-family:var(--sans);padding:8px 10px;border-radius:8px;transition:.3s;font-weight:500;white-space:nowrap}
 .header-nav a:hover{color:var(--accent-light);background:rgba(93,120,255,.08)}
 
-.lang-switch{display:flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:rgba(12,12,20,.6)}
-.lang-switch button{background:transparent;border:none;color:var(--dim);font-family:var(--sans);font-weight:700;font-size:12px;padding:6px 12px;cursor:pointer;transition:.2s;letter-spacing:1px}
+.lang-switch{display:flex;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:rgba(12,12,20,.6);flex-shrink:0;margin:0 4px;}
+.lang-switch button{background:transparent;border:none;color:var(--dim);font-family:var(--sans);font-weight:700;font-size:11px;padding:6px 8px;cursor:pointer;transition:.2s;letter-spacing:1px}
 .lang-switch button.active{background:rgba(93,120,255,.15);color:var(--accent)}
 .lang-switch button:hover:not(.active){color:var(--text)}
 
-.btn-outline{padding:10px 24px;border-radius:40px;border:1px solid var(--border);background:transparent;color:#fff;font-weight:600;font-family:var(--sans);transition:.3s;cursor:pointer;text-decoration:none;font-size:14px}
+/* CURRENCY SWITCH */
+.currency-switch{position:relative;display:inline-block;flex-shrink:0;margin:0 4px;}
+.currency-btn{display:flex;align-items:center;gap:6px;background:rgba(12,12,20,.6);border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:#fff;font-family:var(--sans);font-weight:600;font-size:12px;cursor:pointer;transition:.2s}
+.currency-btn:hover{border-color:var(--accent);background:rgba(93,120,255,.08)}
+.currency-btn .flag{font-size:14px;line-height:1}
+.currency-btn .code{font-family:var(--mono);font-size:11px;color:var(--accent)}
+.currency-dropdown{position:absolute;top:calc(100% + 8px);right:0;min-width:200px;background:rgba(10,10,16,0.98);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:12px;padding:6px;z-index:10050;box-shadow:0 20px 60px rgba(0,0,0,.6);display:none}
+.currency-dropdown.open{display:block;animation:dropIn .2s ease}
+@keyframes dropIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.currency-option{display:flex;align-items:center;gap:12px;width:100%;padding:10px 12px;border:none;background:transparent;color:var(--text);font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;border-radius:8px;transition:.2s;text-align:left}
+.currency-option:hover{background:rgba(93,120,255,.08);color:#fff}
+.currency-option.active{background:rgba(93,120,255,.12);color:#fff}
+.currency-option .flag{font-size:18px;line-height:1}
+.currency-option .name{flex:1}
+.currency-option .code{font-family:var(--mono);font-size:11px;color:var(--dim)}
+.currency-option.active .code{color:var(--accent)}
+
+.btn-outline{padding:10px 16px;border-radius:40px;border:1px solid var(--border);background:transparent;color:#fff;font-weight:600;font-family:var(--sans);transition:.3s;cursor:pointer;text-decoration:none;font-size:13px;white-space:nowrap;flex-shrink:0}
 .btn-outline:hover{background:rgba(93,120,255,.08);border-color:var(--accent);box-shadow:0 0 20px rgba(93,120,255,.15)}
-.btn-primary{padding:10px 28px;border-radius:40px;background:var(--accent);border:none;color:#fff;font-weight:700;font-family:var(--sans);font-size:14px;transition:.3s;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 0 30px var(--accent-glow)}
+.btn-primary{padding:10px 20px;border-radius:40px;background:var(--accent);border:none;color:#fff;font-weight:700;font-family:var(--sans);font-size:13px;transition:.3s;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 0 30px var(--accent-glow);white-space:nowrap;flex-shrink:0}
 .btn-primary:hover{background:#4a63e0;transform:scale(1.03);box-shadow:0 0 50px rgba(93,120,255,.4)}
 
-/* HERO - НОВЫЙ БЛОК (как в Eleven) */
+/* HERO */
 .hero{display:flex;flex-direction:column;align-items:center;text-align:left;padding:60px 0 40px;position:relative;min-height:100vh;justify-content:center}
 .hero-inner{width:100%;display:flex;justify-content:center}
 .hero-panel{position:relative;padding:clamp(28px,3.2vw,44px) clamp(26px,3vw,40px);border-radius:24px;background:linear-gradient(160deg,rgba(26,19,40,0.08) 0%,rgba(14,10,22,0.03) 100%);border:1px solid var(--border);box-shadow:0 40px 80px -30px rgba(0,0,0,0.55),0 0 0 1px rgba(255,255,255,0.02) inset;overflow:hidden;width:100%;max-width:1120px}
@@ -157,8 +174,8 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto}
 .price-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px 32px;text-align:center;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;backdrop-filter:blur(16px)}
 .price-card .duration{font-size:13px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:2px;margin-bottom:24px;font-family:var(--mono)}
-.price-card .price{font-size:48px;font-weight:900;letter-spacing:-2px;font-family:var(--mono);color:#fff;margin-bottom:32px;display:flex;align-items:flex-end;justify-content:center}
-.price-card .price span{font-size:20px;color:var(--dim);margin-left:4px;padding-bottom:6px}
+.price-card .price{font-size:48px;font-weight:900;letter-spacing:-2px;font-family:var(--mono);color:#fff;margin-bottom:32px;display:flex;align-items:flex-end;justify-content:center;gap:4px;flex-wrap:wrap}
+.price-card .price .cur-sym{font-size:20px;color:var(--dim);padding-bottom:6px}
 .price-card .old-price{font-size:14px;color:var(--dim);text-decoration:line-through;margin-bottom:8px;min-height:20px}
 .price-btn{display:flex;align-items:center;justify-content:center;width:100%;padding:14px;border-radius:12px;border:1px solid var(--border);background:rgba(13,13,20,0.6);color:#fff;font-size:14px;font-weight:600;font-family:var(--sans);cursor:pointer;transition:all 0.3s;text-decoration:none;position:relative;overflow:hidden}
 .price-btn:hover{border-color:var(--accent);background:rgba(93,120,255,0.08);color:#fff}
@@ -166,7 +183,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .price-card.popular .price{background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .price-card .badge-better{position:absolute;top:16px;right:-38px;background:var(--accent);color:#fff;font-size:9px;font-weight:800;letter-spacing:1px;padding:5px 38px 6px;transform:rotate(45deg);box-shadow:0 4px 10px rgba(0,0,0,0.5);text-transform:uppercase;white-space:nowrap}
 
-/* ОСТАЛЬНОЕ (оставил без изменений, только цвета поменял) */
+/* ОСТАЛЬНОЕ */
 .contact-grid{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
 .contact-card{display:flex;align-items:center;gap:20px;padding:24px 32px;border-radius:20px;background:var(--card);border:1px solid var(--border);text-decoration:none;color:#fff;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);cursor:pointer;min-width:320px;backdrop-filter:blur(16px)}
 .contact-card:hover{border-color:rgba(93,120,255,0.4);transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.4),0 0 30px rgba(93,120,255,0.15);background:rgba(20,20,30,0.8)}
@@ -296,9 +313,10 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .package-glow{position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(93,120,255,0.1) 0%,transparent 70%);opacity:0;transition:opacity 0.4s ease;pointer-events:none;z-index:1}
 .package-card:hover .package-glow{opacity:1}
 
-@media(max-width:1100px){.features-grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:repeat(2,1fr);max-width:700px}.package-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1180px){.header-nav a{padding:8px 6px;font-size:12px}.header-nav{gap:2px}}
+@media(max-width:1100px){.features-grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:repeat(2,1fr);max-width:700px}.package-grid{grid-template-columns:repeat(2,1fr)}.header{flex-wrap:wrap}}
 @media(max-width:900px){.steps{grid-template-columns:1fr}}
-@media(max-width:768px){.container{padding:0 24px}.features-grid{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr}.hero-stats{flex-direction:column;gap:24px;padding:32px}.contact-grid{flex-direction:column;align-items:center}.security-banner{padding:32px 24px}.cursor-glow{display:none}.header{flex-direction:column;align-items:stretch;gap:10px}.header-nav{justify-content:center}.package-grid{grid-template-columns:1fr}.account-panel{width:100%;right:-100%}.product-grid{grid-template-columns:1fr}}
+@media(max-width:768px){.container{padding:0 24px}.features-grid{grid-template-columns:1fr}.price-grid{grid-template-columns:1fr}.hero-stats{flex-direction:column;gap:24px;padding:32px}.contact-grid{flex-direction:column;align-items:center}.security-banner{padding:32px 24px}.cursor-glow{display:none}.header{flex-direction:column;align-items:stretch;gap:10px}.header-nav{justify-content:center;flex-wrap:wrap}.package-grid{grid-template-columns:1fr}.account-panel{width:100%;right:-100%}.product-grid{grid-template-columns:1fr}}
 @media(max-width:480px){.hero h1{font-size:32px}.section-title{font-size:28px}.contact-card{min-width:100%;padding:20px}.fp-modal .fp-actions{flex-direction:column}.hero-buttons{flex-direction:column;width:100%}.hero-buttons a{width:100%;justify-content:center}}
 </style>
 </head>
@@ -325,6 +343,35 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
             <div class="lang-switch">
                 <button type="button" id="lang-ru" class="active" onclick="setLang('ru')">RU</button>
                 <button type="button" id="lang-en" onclick="setLang('en')">EN</button>
+            </div>
+            <div class="currency-switch" id="currencySwitch">
+                <button class="currency-btn" onclick="toggleCurrencyDropdown(event)">
+                    <span class="flag" id="currencyFlag">🇷🇺</span>
+                    <span class="code" id="currencyCode">RUB</span>
+                    <i class="fas fa-chevron-down" style="font-size:9px;opacity:0.5;"></i>
+                </button>
+                <div class="currency-dropdown" id="currencyDropdown">
+                    <button class="currency-option" onclick="selectCurrency('ru')">
+                        <span class="flag">🇷🇺</span>
+                        <span class="name">Россия</span>
+                        <span class="code">RUB</span>
+                    </button>
+                    <button class="currency-option" onclick="selectCurrency('ua')">
+                        <span class="flag">🇺🇦</span>
+                        <span class="name">Україна</span>
+                        <span class="code">UAH</span>
+                    </button>
+                    <button class="currency-option" onclick="selectCurrency('kz')">
+                        <span class="flag">🇰🇿</span>
+                        <span class="name">Казахстан</span>
+                        <span class="code">KZT</span>
+                    </button>
+                    <button class="currency-option" onclick="selectCurrency('us')">
+                        <span class="flag">🇺🇸</span>
+                        <span class="name">America</span>
+                        <span class="code">USD</span>
+                    </button>
+                </div>
             </div>
             <a href="#" class="btn-outline" onclick="openRegisterModal(event)" data-i18n="nav_register">Регистрация</a>
             <a href="#" class="btn-outline" onclick="openAccountPanel(event)" data-i18n="nav_login">Войти</a>
@@ -781,6 +828,55 @@ function applyLang(){
 }
 function setLang(lang){ currentLang = lang; localStorage.setItem('mb_lang', lang); applyLang(); }
 
+/* ==================== ВАЛЮТЫ ==================== */
+const CURRENCIES = {
+  ru: { code: 'RUB', flag: '🇷🇺', name: 'Россия', symbol: '₽', rate: 1, format: (v) => v.toFixed(0) + ' ₽' },
+  ua: { code: 'UAH', flag: '🇺🇦', name: 'Україна', symbol: '₴', rate: 0.43, format: (v) => v.toFixed(0) + ' ₴' },
+  kz: { code: 'KZT', flag: '🇰🇿', name: 'Казахстан', symbol: '₸', rate: 5.5, format: (v) => v.toFixed(0) + ' ₸' },
+  us: { code: 'USD', flag: '🇺🇸', name: 'America', symbol: '$', rate: 0.011, format: (v) => '$' + v.toFixed(2) }
+};
+let currentCurrency = localStorage.getItem('mb_currency') || 'ru';
+function getCurrency(){ return CURRENCIES[currentCurrency]; }
+function convertPrice(rubPrice){ return Math.round(rubPrice * getCurrency().rate); }
+function formatPrice(rubPrice){ return getCurrency().format(convertPrice(rubPrice)); }
+function updateCurrencyUI(){
+  const c = getCurrency();
+  document.getElementById('currencyFlag').textContent = c.flag;
+  document.getElementById('currencyCode').textContent = c.code;
+  document.querySelectorAll('.currency-option').forEach(opt => {
+    opt.classList.toggle('active', opt.getAttribute('data-currency') === currentCurrency);
+  });
+}
+function selectCurrency(code){
+  currentCurrency = code;
+  localStorage.setItem('mb_currency', code);
+  updateCurrencyUI();
+  renderPrices();
+  closeCurrencyDropdown();
+  const buyModal = document.getElementById('buyModal');
+  if(buyModal && buyModal.style.display === 'flex'){
+    const plan = PLANS[2];
+    document.getElementById('buyPrice').textContent = formatPrice(getPrice(plan));
+  }
+}
+function toggleCurrencyDropdown(e){
+  e.stopPropagation();
+  document.getElementById('currencyDropdown').classList.toggle('open');
+}
+function closeCurrencyDropdown(){
+  document.getElementById('currencyDropdown').classList.remove('open');
+}
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.currency-switch')) closeCurrencyDropdown();
+});
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.currency-option').forEach((opt, idx) => {
+    const codes = ['ru','ua','kz','us'];
+    opt.setAttribute('data-currency', codes[idx]);
+  });
+  updateCurrencyUI();
+});
+
 /* ==================== ПРОДУКТЫ / ЦЕНЫ ==================== */
 const PLANS = [
   { key:'duration_1d',      full:99,   lite:49,  popular:false },
@@ -796,14 +892,15 @@ function getPrice(plan){ return currentProduct==='lite' ? plan.lite : plan.full;
 function renderPrices(){
   const grid = document.getElementById('priceGrid'); if(!grid) return;
   grid.innerHTML = PLANS.map(p=>{
-    const price = getPrice(p);
-    const old = currentProduct==='lite' ? `<div class="old-price">${p.full} ₽</div>` : `<div class="old-price"></div>`;
+    const priceRub = getPrice(p);
+    const priceDisplay = formatPrice(priceRub);
+    const old = currentProduct==='lite' ? `<div class="old-price">${formatPrice(p.full)}</div>` : `<div class="old-price"></div>`;
     return `<div class="price-card ${p.popular?'popular':''}">
       ${p.popular?`<div class="badge-better">${t('popular')}</div>`:''}
       <div class="duration">${t(p.key)}</div>
       ${old}
-      <div class="price">${price}<span>₽</span></div>
-      <a href="#" onclick="openBuyModal(event, '${t(p.key)}', ${price})" class="price-btn"><span>${t('buy_btn')}</span></a>
+      <div class="price">${priceDisplay.replace(/[₽₴₸$]/g,'')}<span class="cur-sym">${getCurrency().symbol}</span></div>
+      <a href="#" onclick="openBuyModal(event, '${t(p.key)}', ${priceRub})" class="price-btn"><span>${t('buy_btn')}</span></a>
     </div>`;
   }).join('');
 }
@@ -815,7 +912,7 @@ function selectProduct(prod){
 }
 function buyCurrent(e){
   if(e) e.preventDefault();
-  const plan = PLANS[2]; // 30 дней
+  const plan = PLANS[2];
   openBuyModal(e, t(plan.key), getPrice(plan));
 }
 
@@ -935,18 +1032,6 @@ const revealObs = new IntersectionObserver(entries=>{
 }, { threshold:0.1 });
 document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
 
-const statusMessages = ['UNDETECTED','ACTIVE','ONLINE','READY','SECURE'];
-const statusTextEl = document.getElementById('statusText');
-setInterval(()=>{
-  const badge = document.querySelector('.status-badge'); if(!badge) return;
-  badge.style.opacity = 0;
-  setTimeout(()=>{
-    const msg = statusMessages[Math.floor(Math.random()*statusMessages.length)];
-    if(statusTextEl) statusTextEl.textContent = msg + ' — ACTIVE STATUS';
-    badge.style.opacity = 1;
-  }, 250);
-}, 5000);
-
 function showToast(message){
   const toast = document.getElementById('toast');
   document.getElementById('toastMessage').textContent = message;
@@ -1014,11 +1099,11 @@ document.addEventListener('click', function(e){
   }
 });
 
-function openBuyModal(event, plan, price){
+function openBuyModal(event, plan, priceRub){
   if(event) event.preventDefault();
   document.getElementById('buyProduct').textContent = PRODUCT_NAMES[currentProduct];
   document.getElementById('buyPlan').textContent = plan;
-  document.getElementById('buyPrice').textContent = price + ' ₽';
+  document.getElementById('buyPrice').textContent = formatPrice(priceRub);
   const m = document.getElementById('buyModal'); m.style.display='flex';
   const c = m.querySelector('div');
   setTimeout(()=>{ c.style.transform='scale(1) translateY(0)'; }, 50);
@@ -1049,12 +1134,13 @@ function toggleFaq(btn){
 }
 
 document.addEventListener('keydown', e=>{
-  if(e.key==='Escape'){ closeBuyModal(); closeRegisterModal(); closeAccountPanel(); closeFunPayModal(); }
+  if(e.key==='Escape'){ closeBuyModal(); closeRegisterModal(); closeAccountPanel(); closeFunPayModal(); closeCurrencyDropdown(); }
 });
 
 /* init */
 applyLang();
 selectProduct(currentProduct);
+updateCurrencyUI();
 </script>
 </body>
 </html>
