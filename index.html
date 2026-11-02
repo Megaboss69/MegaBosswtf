@@ -21,7 +21,7 @@
     --accent-light:#cdd6ff;
     --green:#00e639;
     --orange:#f57c00;
-    --red:#ff4d4d;
+    --crypto:#f7931a;
     --mono:'JetBrains Mono',monospace;
     --sans:'Inter',sans-serif;
 }
@@ -31,7 +31,6 @@ html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--accent) v
 ::-webkit-scrollbar-thumb{background:var(--accent)}
 body{font:15px/1.6 var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;min-height:100vh}
 
-/* ФОН */
 body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 30% 20%, rgba(93,120,255,0.1) 0%, transparent 50%),radial-gradient(ellipse at 70% 80%, rgba(93,120,255,0.06) 0%, transparent 45%);pointer-events:none;z-index:0}
 .noise{position:fixed;inset:0;z-index:1;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px)}
 
@@ -50,7 +49,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 
 .container{position:relative;z-index:2;max-width:1300px;margin:0 auto;padding:0 40px 80px}
 
-/* HEADER */
 .header{display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;gap:16px;padding:20px 0;border-bottom:1px solid var(--border);width:100%}
 .logo{font-size:24px;font-weight:800;font-family:var(--sans);color:var(--accent);letter-spacing:-0.5px;display:flex;align-items:center;text-shadow:0 0 20px var(--accent-glow);white-space:nowrap;flex-shrink:0}
 .logo-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;box-shadow:0 0 12px var(--accent);animation:dotPulse 3s ease-in-out infinite;margin-right:8px}
@@ -65,8 +63,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .lang-switch button.active{background:rgba(93,120,255,.15);color:var(--accent)}
 .lang-switch button:hover:not(.active){color:var(--text)}
 
-/* CURRENCY SWITCH */
-.currency-switch{position:relative;display:inline-block;flex-shrink:0;margin: 0 4px;}
+.currency-switch{position:relative;display:inline-block;flex-shrink:0;margin:0 4px;}
 .currency-btn{display:flex;align-items:center;gap:6px;background:rgba(12,12,20,.6);border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:#fff;font-family:var(--sans);font-weight:600;font-size:12px;cursor:pointer;transition:.2s}
 .currency-btn:hover{border-color:var(--accent);background:rgba(93,120,255,.08)}
 .currency-btn .flag{font-size:14px;line-height:1}
@@ -87,7 +84,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .btn-primary{padding:10px 20px;border-radius:40px;background:var(--accent);border:none;color:#fff;font-weight:700;font-family:var(--sans);font-size:13px;transition:.3s;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 0 30px var(--accent-glow);white-space:nowrap;flex-shrink:0}
 .btn-primary:hover{background:#4a63e0;transform:scale(1.03);box-shadow:0 0 50px rgba(93,120,255,.4)}
 
-/* HERO */
 .hero{display:flex;flex-direction:column;align-items:center;text-align:left;padding:60px 0 40px;position:relative;min-height:100vh;justify-content:center}
 .hero-inner{width:100%;display:flex;justify-content:center}
 .hero-panel{position:relative;padding:clamp(28px,3.2vw,44px) clamp(26px,3vw,40px);border-radius:24px;background:linear-gradient(160deg,rgba(26,19,40,0.08) 0%,rgba(14,10,22,0.03) 100%);border:1px solid var(--border);box-shadow:0 40px 80px -30px rgba(0,0,0,0.55),0 0 0 1px rgba(255,255,255,0.02) inset;overflow:hidden;width:100%;max-width:1120px}
@@ -106,6 +102,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 
 .hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
 .hero-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:99px;background:rgba(255,255,255,0.03);border:1px solid var(--border);font-size:13px;color:#ccc;font-family:var(--sans)}
+.hero-pill svg{width:14px;height:14px;color:var(--accent-light)}
 
 .hero-buttons{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px}
 .hero-buttons .btn-primary{display:flex;align-items:center;gap:8px;padding:14px 32px;font-size:15px;border-radius:16px}
@@ -120,7 +117,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .hero-stat .num span{color:var(--accent);font-size:inherit;margin-left:2px}
 .hero-stat .label{font-size:10px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-top:6px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-family:var(--mono)}
 
-/* SCROLL */
 .scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);opacity:0;transition:opacity 0.8s ease,bottom 0.8s ease}
 .scroll-indicator.visible{opacity:0.4}
 .scroll-indicator:hover{opacity:1}
@@ -128,7 +124,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .scroll-indicator .wheel{width:4px;height:8px;background:var(--accent);border-radius:2px;position:absolute;top:8px;left:50%;transform:translateX(-50%);animation:scrollWheel 2s ease-in-out infinite;box-shadow:0 0 10px var(--accent)}
 @keyframes scrollWheel{0%{opacity:1;transform:translateX(-50%) translateY(0)}100%{opacity:0;transform:translateX(-50%) translateY(14px)}}
 
-/* PRODUCT PICKER */
 .product-picker{padding:20px 0 40px;position:relative;z-index:2}
 .product-picker-inner{max-width:900px;margin:0 auto}
 .product-picker-label{text-align:center;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--dim);margin-bottom:20px;font-family:var(--mono)}
@@ -143,11 +138,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .product-tile h3{font-size:18px;font-weight:800;color:#fff;font-family:var(--sans);margin-bottom:4px}
 .product-tile .pt-sub{font-size:12px;color:var(--dim);font-family:var(--mono);text-transform:uppercase;letter-spacing:1px}
 .product-tile .pt-desc{font-size:13px;color:var(--text);margin-top:10px;line-height:1.6}
-.product-tile .pt-limits{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px}
-.lite-lock{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;font-size:10px;font-weight:700;font-family:var(--mono);letter-spacing:.5px;text-transform:uppercase;background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);color:#ffb3b3}
-.lite-lock.ok{background:rgba(0,230,57,.08);border-color:rgba(0,230,57,.25);color:#9dffb4}
 
-/* SECTIONS */
 .section{padding:80px 0;position:relative}
 .section-header{text-align:center;margin-bottom:56px}
 .section-label{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:3px;margin-bottom:16px;font-family:var(--mono)}
@@ -162,8 +153,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .security-tags{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:32px}
 .security-tag{padding:6px 16px;border-radius:8px;font-size:12px;font-weight:600;background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--dim);font-family:var(--mono);transition:all 0.3s;cursor:default}
 .security-tag:hover{color:#fff;border-color:var(--accent);background:rgba(93,120,255,0.1);transform:translateY(-2px);box-shadow:0 4px 12px rgba(93,120,255,0.15)}
-.security-tag.off{opacity:.45;border-style:dashed;text-decoration:line-through}
-.security-tag.pri{border-color:var(--accent);color:#fff}
 
 .features-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .feature-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:32px 28px;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;backdrop-filter:blur(16px)}
@@ -172,13 +161,10 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .feature-card li{padding:6px 0;color:var(--dim);font-size:13px;font-weight:400;border-bottom:1px solid rgba(255,255,255,0.02);transition:all 0.3s;display:flex;align-items:center;gap:10px;position:relative;z-index:2;font-family:var(--mono)}
 .feature-card li::before{content:'›';color:var(--accent);font-weight:700;font-size:16px}
 .feature-card li:hover{color:#fff;padding-left:4px}
-.feature-card li.locked{opacity:.4;text-decoration:line-through}
-.feature-card li.locked::before{content:'✕';color:var(--red);font-size:12px}
 .feature-icon-wrapper{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;position:relative;background:linear-gradient(135deg,rgba(93,120,255,0.15),rgba(124,77,255,0.1));border:1px solid rgba(93,120,255,0.2);color:#fff}
 .feature-icon-wrapper svg{width:24px;height:24px;filter:drop-shadow(0 0 10px rgba(93,120,255,0.5))}
 .feature-card h3{font-size:16px;font-weight:800;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase;font-family:var(--sans);background:linear-gradient(135deg,#fff,var(--dim));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-/* PRICING */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto}
 .price-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px 32px;text-align:center;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden;backdrop-filter:blur(16px)}
 .price-card .duration{font-size:13px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:2px;margin-bottom:24px;font-family:var(--mono)}
@@ -191,13 +177,12 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .price-card.popular .price{background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .price-card .badge-better{position:absolute;top:16px;right:-38px;background:var(--accent);color:#fff;font-size:9px;font-weight:800;letter-spacing:1px;padding:5px 38px 6px;transform:rotate(45deg);box-shadow:0 4px 10px rgba(0,0,0,0.5);text-transform:uppercase;white-space:nowrap}
 
-/* CONTACT */
 .contact-grid{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
 .contact-card{display:flex;align-items:center;gap:20px;padding:24px 32px;border-radius:20px;background:var(--card);border:1px solid var(--border);text-decoration:none;color:#fff;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);cursor:pointer;min-width:320px;backdrop-filter:blur(16px)}
 .contact-card:hover{border-color:rgba(93,120,255,0.4);transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,0.4),0 0 30px rgba(93,120,255,0.15);background:rgba(20,20,30,0.8)}
 .contact-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.03);border:1px solid var(--border);transition:all 0.3s}
-.contact-icon svg{width:28px;height:28px;transition:all 0.3s}
 .contact-card:hover .contact-icon{background:rgba(93,120,255,0.1);border-color:var(--accent)}
+.contact-icon svg{width:28px;height:28px;transition:all 0.3s}
 .contact-info .label{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:4px;font-weight:600;font-family:var(--mono)}
 .contact-info .value{font-size:18px;font-weight:700;font-family:var(--mono)}
 
@@ -241,9 +226,9 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .account-menu-item:hover .icon{background:rgba(93,120,255,0.08);color:var(--accent)}
 .account-menu-item .arrow{color:var(--dim);margin-left:auto;font-size:11px;transition:0.3s}
 .account-menu-item:hover .arrow{color:var(--accent);transform:translateX(3px)}
-.account-menu-item.danger{color:var(--red)}
+.account-menu-item.danger{color:#ff4d4d}
 .account-menu-item.danger:hover{background:rgba(255,77,77,0.06)}
-.account-menu-item.danger .icon{color:var(--red)}
+.account-menu-item.danger .icon{color:#ff4d4d}
 .account-footer{padding:14px 28px;border-top:1px solid var(--border);font-size:11px;color:var(--dim);text-align:center;flex-shrink:0;font-family:var(--mono);letter-spacing:0.5px;position:relative;z-index:2}
 
 .register-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);z-index:10001;align-items:center;justify-content:center}
@@ -320,25 +305,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .package-content p{font-size:15px;color:var(--dim);margin:0;line-height:1.5;opacity:0.9;font-family:var(--sans)}
 .package-glow{position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(93,120,255,0.1) 0%,transparent 70%);opacity:0;transition:opacity 0.4s ease;pointer-events:none;z-index:1}
 .package-card:hover .package-glow{opacity:1}
-.package-card.off{opacity:.5;filter:grayscale(.4)}
-.package-card.off .package-icon-wrapper{color:var(--dim);background:rgba(255,255,255,.02)}
-.package-card .pkg-lock{position:absolute;top:12px;right:12px;z-index:3}
-
-.lite-warning{display:none;background:rgba(255,77,77,0.06);border:1px solid rgba(255,77,77,0.3);border-radius:16px;padding:20px 24px;margin-top:20px;text-align:left}
-.lite-warning.show{display:block}
-.lite-warning h4{color:#ffb3b3;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;font-family:var(--mono);display:flex;align-items:center;gap:8px}
-.lite-warning ul{list-style:none}
-.lite-warning li{color:rgba(255,255,255,.6);font-size:13px;padding-left:16px;position:relative;line-height:1.8}
-.lite-warning li::before{content:'✕';position:absolute;left:0;color:var(--red);font-size:11px}
-.lite-warning li.ok::before{content:'✓';color:var(--green)}
-.lite-warning li.ok{color:rgba(255,255,255,.8)}
-
-#liteBanner{display:none;margin-bottom:32px}
-#liteBanner.show{display:flex}
-.lite-banner-inner{display:flex;align-items:flex-start;gap:16px;width:100%;padding:20px 24px;border-radius:16px;background:rgba(255,77,77,.06);border:1px solid rgba(255,77,77,.25)}
-.lite-banner-icon{width:42px;height:42px;flex-shrink:0;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(255,77,77,.12);color:#ff8a8a;font-size:18px}
-.lite-banner-text h4{color:#ffb3b3;font-size:13px;text-transform:uppercase;letter-spacing:1.2px;font-family:var(--mono);margin-bottom:4px}
-.lite-banner-text p{color:rgba(255,255,255,.6);font-size:13px;line-height:1.6;font-family:var(--sans)}
 
 @media(max-width:1180px){.header-nav a{padding:8px 6px;font-size:12px}.header-nav{gap:2px}}
 @media(max-width:1100px){.features-grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:repeat(2,1fr);max-width:700px}.package-grid{grid-template-columns:repeat(2,1fr)}.header{flex-wrap:wrap}}
@@ -378,26 +344,10 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                     <i class="fas fa-chevron-down" style="font-size:9px;opacity:0.5;"></i>
                 </button>
                 <div class="currency-dropdown" id="currencyDropdown">
-                    <button class="currency-option" onclick="selectCurrency('ru')">
-                        <span class="flag">🇷🇺</span>
-                        <span class="name">Россия</span>
-                        <span class="code">RUB</span>
-                    </button>
-                    <button class="currency-option" onclick="selectCurrency('ua')">
-                        <span class="flag">🇺🇦</span>
-                        <span class="name">Україна</span>
-                        <span class="code">UAH</span>
-                    </button>
-                    <button class="currency-option" onclick="selectCurrency('kz')">
-                        <span class="flag">🇰🇿</span>
-                        <span class="name">Казахстан</span>
-                        <span class="code">KZT</span>
-                    </button>
-                    <button class="currency-option" onclick="selectCurrency('us')">
-                        <span class="flag">🇺🇸</span>
-                        <span class="name">America</span>
-                        <span class="code">USD</span>
-                    </button>
+                    <button class="currency-option" onclick="selectCurrency('ru')"><span class="flag">🇷🇺</span><span class="name">Россия</span><span class="code">RUB</span></button>
+                    <button class="currency-option" onclick="selectCurrency('ua')"><span class="flag">🇺🇦</span><span class="name">Україна</span><span class="code">UAH</span></button>
+                    <button class="currency-option" onclick="selectCurrency('kz')"><span class="flag">🇰🇿</span><span class="name">Казахстан</span><span class="code">KZT</span></button>
+                    <button class="currency-option" onclick="selectCurrency('us')"><span class="flag">🇺🇸</span><span class="name">America</span><span class="code">USD</span></button>
                 </div>
             </div>
             <a href="#" class="btn-outline" onclick="openRegisterModal(event)" data-i18n="nav_register">Регистрация</a>
@@ -409,16 +359,14 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
     <section class="hero" id="hero">
         <div class="hero-inner">
             <div class="hero-panel">
-                <div class="hero-badge">
-                    <span class="hero-badge-dot"></span> <span data-i18n="hero_badge">Быстрый чекаут · Ключ на почту</span>
-                </div>
+                <div class="hero-badge"><span class="hero-badge-dot"></span> <span data-i18n="hero_badge">Быстрый чекаут · Ключ на почту</span></div>
                 <div class="hero-subtitle" data-i18n="hero_subtitle">Магазин ПО · Цифровые лицензии</div>
                 <h1>
                     <span data-i18n="hero_title_1">Премиум-лицензии</span><br>
                     <span data-i18n="hero_title_2">для </span><span class="gradient" data-i18n="hero_title_3">Rust и MegaBoss.wtf</span>
                 </h1>
                 <p data-i18n="hero_sub">Доступ в пару кликов: войдите, оплатите — лицензия появится в личном кабинете.</p>
-                
+
                 <div class="hero-pills">
                     <span class="hero-pill"><i class="fas fa-check-circle" style="color:var(--accent)"></i> <span data-i18n="hero_pill1">Мгновенная выдача</span></span>
                     <span class="hero-pill"><i class="fas fa-lock" style="color:var(--accent)"></i> <span data-i18n="hero_pill2">Безопасная оплата</span></span>
@@ -435,20 +383,19 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                 </div>
 
                 <div class="hero-stats">
-                    <div class="hero-stat"><div class="num counted" data-count="380" id="statSettingsNum">380<span>+</span></div><div class="label" data-i18n="stat_settings">Настроек</div></div>
+                    <div class="hero-stat"><div class="num counted" data-count="380">380<span>+</span></div><div class="label" data-i18n="stat_settings">Настроек</div></div>
                     <div class="hero-stat-sep"></div>
-                    <div class="hero-stat"><div class="num counted" data-count="15" id="statDevblogsNum">15</div><div class="label" data-i18n="stat_devblogs">Девблогов</div></div>
+                    <div class="hero-stat"><div class="num counted" data-count="15">15</div><div class="label" data-i18n="stat_devblogs">Девблогов</div></div>
                     <div class="hero-stat-sep"></div>
                     <div class="hero-stat"><div class="num">0</div><div class="label" data-i18n="stat_detects">Детектов</div></div>
                     <div class="hero-stat-sep"></div>
-                    <div class="hero-stat"><div class="num counted" data-count="200" id="statBypassNum">200<span>+</span></div><div class="label" data-i18n="stat_bypass">Обходов</div></div>
+                    <div class="hero-stat"><div class="num counted" data-count="200">200<span>+</span></div><div class="label" data-i18n="stat_bypass">Обходов</div></div>
                 </div>
             </div>
         </div>
         <div class="scroll-indicator visible" id="scrollIndicator"><div class="mouse"><div class="wheel"></div></div></div>
     </section>
 
-    <!-- PRODUCT PICKER -->
     <section class="product-picker reveal" id="products">
         <div class="product-picker-inner">
             <div class="product-picker-label" data-i18n="pick_label">Выберите продукт</div>
@@ -459,11 +406,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                     <h3>MegaBoss.wtf</h3>
                     <div class="pt-sub" data-i18n="pick_full_sub">Полная версия</div>
                     <div class="pt-desc" data-i18n="pick_full_desc">Полный набор функций External. Максимум возможностей.</div>
-                    <div class="pt-limits">
-                        <span class="lite-lock ok">✓ 196–308</span>
-                        <span class="lite-lock ok">✓ HWID</span>
-                        <span class="lite-lock ok">✓ Support</span>
-                    </div>
                 </div>
                 <div class="product-tile lite" data-product="lite" onclick="selectProduct('lite')">
                     <span class="pt-badge">LITE</span>
@@ -471,39 +413,15 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                     <h3>MegaBoss.wtf Lite</h3>
                     <div class="pt-sub" data-i18n="pick_lite_sub">Упрощённая версия</div>
                     <div class="pt-desc" data-i18n="pick_lite_desc">Базовый набор по сниженной цене — в 2 раза дешевле.</div>
-                    <div class="pt-limits">
-                        <span class="lite-lock">✕ только 240–266</span>
-                        <span class="lite-lock">✕ без HWID</span>
-                        <span class="lite-lock">✕ без поддержки</span>
-                    </div>
                 </div>
-            </div>
-            <div class="lite-warning" id="liteWarning">
-                <h4><i class="fas fa-exclamation-triangle"></i> Ограничения Lite-версии</h4>
-                <ul>
-                    <li>Девблоги <b>только 240–266</b> (196, 217, 276–308 не поддерживаются).</li>
-                    <li>Встроенные HWID-спуферы <b>отсутствуют</b> — нужен свой спуфер.</li>
-                    <li>Техническая поддержка по Lite <b>не оказывается</b>.</li>
-                    <li>Часть визуалов, misc-функций и дополнений недоступна.</li>
-                    <li class="ok">Подходит для теста и для серверов на 240–266.</li>
-                </ul>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
     <section class="section" id="features">
         <div class="section-header reveal">
             <div class="section-label" data-i18n="feat_label">Rust External</div>
             <h2 class="section-title"><span class="gradient" data-i18n="feat_title">Полный комплект</span></h2>
-        </div>
-
-        <div class="lite-banner-inner" id="liteBanner" style="display:none;margin-bottom:32px;">
-            <div class="lite-banner-icon"><i class="fas fa-info-circle"></i></div>
-            <div class="lite-banner-text">
-                <h4 data-i18n="lite_banner_t">Выбран Lite — ограниченный набор</h4>
-                <p data-i18n="lite_banner_d">Ниже зачёркнутые и подписанные функции недоступны в Lite. Доступны только девблоги 240–266, без встроенного HWID-спуфера и без поддержки.</p>
-            </div>
         </div>
 
         <div class="security-banner reveal">
@@ -511,8 +429,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                 <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg>
             </div>
             <h3 data-i18n="sec_title">Полный обход античитов девблогов.</h3>
-            <p id="secSub" style="color:var(--dim);font-family:var(--mono);font-size:12px;margin-top:-8px;margin-bottom:8px;" data-i18n="sec_sub_full">Для полной версии: 196–308. Lite — только 240–266.</p>
-            <div class="security-tags" id="secTagsFull">
+            <div class="security-tags">
                 <span class="security-tag">Yrs196</span><span class="security-tag">Yrs217</span><span class="security-tag">OldRust</span>
                 <span class="security-tag">MyRust</span><span class="security-tag">MagixRust</span><span class="security-tag">SunfireRust</span>
                 <span class="security-tag">VeilRust</span><span class="security-tag">CompanyRust</span><span class="security-tag">DreamRust</span>
@@ -520,33 +437,19 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                 <span class="security-tag">ShockRust</span><span class="security-tag">BummerRust</span><span class="security-tag">SummerRust</span>
                 <span class="security-tag">SnowRust</span>
             </div>
-            <div class="security-tags" id="secTagsFull2" style="margin-top:10px;">
-                <span class="security-tag pri">HWID Bypass</span>
-                <span class="security-tag pri">Ultimate Trace</span>
-            </div>
-            <div class="security-tags" id="secTagsLite" style="display:none;">
-                <span class="security-tag">DEV 240</span><span class="security-tag">DEV 246</span><span class="security-tag">DEV 247</span><span class="security-tag">DEV 248</span>
-                <span class="security-tag">DEV 261</span><span class="security-tag">DEV 265</span><span class="security-tag">DEV 266</span>
-            </div>
-            <div class="security-tags" id="secTagsLite2" style="display:none;margin-top:10px;">
-                <span class="security-tag off">HWID Bypass (нет в Lite)</span>
-                <span class="security-tag off">Ultimate Trace (нет в Lite)</span>
+            <div class="security-tags" style="margin-top:10px;">
+                <span class="security-tag" style="border-color:var(--accent);color:#fff;">HWID Bypass</span>
+                <span class="security-tag" style="border-color:var(--accent);color:#fff;">Ultimate Trace</span>
             </div>
         </div>
 
         <div class="reveal" style="margin-bottom:8px;">
             <div style="text-align:center;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:3px;font-family:var(--mono);" data-i18n="supported_dev">Поддерживаемые девблоги</div>
         </div>
-        <div class="marquee-wrap reveal" id="marqueeFull">
+        <div class="marquee-wrap reveal">
             <div class="marquee-track">
                 <span class="marquee-chip">DEV 196</span><span class="marquee-chip">DEV 217</span><span class="marquee-chip">DEV 308</span><span class="marquee-chip">DEV 240</span><span class="marquee-chip">DEV 246</span><span class="marquee-chip">DEV 247</span><span class="marquee-chip">DEV 248</span><span class="marquee-chip">DEV 261</span><span class="marquee-chip">DEV 265</span><span class="marquee-chip">DEV 266</span><span class="marquee-chip">DEV 276</span><span class="marquee-chip">DEV 285</span><span class="marquee-chip">DEV 286</span><span class="marquee-chip">DEV 300</span>
                 <span class="marquee-chip">DEV 196</span><span class="marquee-chip">DEV 217</span><span class="marquee-chip">DEV 308</span><span class="marquee-chip">DEV 240</span><span class="marquee-chip">DEV 246</span><span class="marquee-chip">DEV 247</span><span class="marquee-chip">DEV 248</span><span class="marquee-chip">DEV 261</span><span class="marquee-chip">DEV 265</span><span class="marquee-chip">DEV 266</span><span class="marquee-chip">DEV 276</span><span class="marquee-chip">DEV 285</span><span class="marquee-chip">DEV 286</span><span class="marquee-chip">DEV 300</span>
-            </div>
-        </div>
-        <div class="marquee-wrap reveal" id="marqueeLite" style="display:none;">
-            <div class="marquee-track">
-                <span class="marquee-chip">DEV 240</span><span class="marquee-chip">DEV 246</span><span class="marquee-chip">DEV 247</span><span class="marquee-chip">DEV 248</span><span class="marquee-chip">DEV 261</span><span class="marquee-chip">DEV 265</span><span class="marquee-chip">DEV 266</span>
-                <span class="marquee-chip">DEV 240</span><span class="marquee-chip">DEV 246</span><span class="marquee-chip">DEV 247</span><span class="marquee-chip">DEV 248</span><span class="marquee-chip">DEV 261</span><span class="marquee-chip">DEV 265</span><span class="marquee-chip">DEV 266</span>
             </div>
         </div>
 
@@ -566,7 +469,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                     <h3 style="margin-bottom:0;">AIM</h3>
                 </div>
                 <ul>
-                    <li>Legit Aim</li><li>Silent Aim</li><li>Silent Legit Mode</li><li>Silent Legit Aim</li><li>Dynamic Legit Aim by Movement</li><li>FOV Circle (Rainbow)</li><li>Draw FOV</li><li>Lock Target</li><li>Visibility Check</li><li>Target Random</li><li>Shoot like del</li><li>Aim at Sleepers</li><li>Aim at Bots</li><li>No Aim Teammates</li><li class="liteLock">Arkan Undetect</li><li>Target Bone (All)</li><li>Smoothness Control</li><li>Minimum Smoothness</li><li>Distance Limit</li><li>FOV Alpha</li><li>Улучшенный Манипулятор</li><li>Функция Авто-килл</li><li>Функция Анти-Аим</li><li>Стрельба в прыжке</li><li class="liteLock">Прострел сквозь стены</li><li>Таймер времени до перезарядки</li>
+                    <li>Legit Aim</li><li>Silent Aim</li><li>Silent Legit Mode</li><li>Silent Legit Aim</li><li>Dynamic Legit Aim by Movement</li><li>FOV Circle (Rainbow)</li><li>Draw FOV</li><li>Lock Target</li><li>Visibility Check</li><li>Target Random</li><li>Shoot like del</li><li>Aim at Sleepers</li><li>Aim at Bots</li><li>No Aim Teammates</li><li>Arkan Undetect</li><li>Target Bone (All)</li><li>Smoothness Control</li><li>Minimum Smoothness</li><li>Distance Limit</li><li>FOV Alpha</li><li>Улучшенный Манипулятор</li><li>Функция Авто-килл</li><li>Функция Анти-Аим</li><li>Стрельба в прыжке</li><li>Прострел сквозь стены</li><li>Таймер времени до перезарядки</li>
                 </ul>
             </div>
             <div class="feature-card reveal reveal-delay-2">
@@ -584,13 +487,12 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                     <h3 style="margin-bottom:0;">MISC</h3>
                 </div>
                 <ul>
-                    <li>FOV Changer</li><li>Crosshair (9 Types)</li><li>Anti-OBS</li><li>Anti Screenshot</li><li class="liteLock">Bypass MyRust &amp; OldRust</li><li>Zoom</li><li>Speedhack</li><li>Spider (Wall Climb)</li><li>Infinite Jump</li><li>High Jump</li><li>Jump Height</li><li>Flyhack Stopper</li><li>Always Sprint</li><li>Debug Camera</li><li>Object Rotation</li><li>Custom Time</li><li>Bright Ambient (Night)</li><li>Night Stars</li><li>Atmosphere Fog</li><li class="liteLock">Spoofer File Run</li><li class="liteLock">Spoofer Runtime</li><li class="liteLock">Clean Traces</li><li>Unload / Unload + Clean</li><li>Reset All Settings</li><li>Config System</li><li>Hotkey Manager</li><li>Эксплойт на шкаф</li><li>Режим стримера</li><li>Кастомная погода и замена цвета неба</li><li>Кнопка обновления конфигов "Refresh"</li><li>Функция "Farm Assist"</li><li class="liteLock">Встроенные HWID Спуферы</li>
+                    <li>FOV Changer</li><li>Crosshair (9 Types)</li><li>Anti-OBS</li><li>Anti Screenshot</li><li>Bypass MyRust &amp; OldRust</li><li>Zoom</li><li>Speedhack</li><li>Spider (Wall Climb)</li><li>Infinite Jump</li><li>High Jump</li><li>Jump Height</li><li>Flyhack Stopper</li><li>Always Sprint</li><li>Debug Camera</li><li>Object Rotation</li><li>Custom Time</li><li>Bright Ambient (Night)</li><li>Night Stars</li><li>Atmosphere Fog</li><li>Spoofer File Run</li><li>Spoofer Runtime</li><li>Unload / Unload + Clean</li><li>Clean Traces</li><li>Reset All Settings</li><li>Config System</li><li>Hotkey Manager</li><li>Эксплойт на шкаф</li><li>Режим стримера</li><li>Кастомная погода и замена цвета неба</li><li>Кнопка обновления конфигов "Refresh"</li><li>Функция "Farm Assist"</li><li>Встроенные HWID Спуферы</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- PACKAGE FEATURES -->
     <section class="section" id="package-features">
         <div class="section-header reveal">
             <div class="section-label" data-i18n="pkg_label">дополнения</div>
@@ -599,17 +501,15 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
         <div class="package-grid reveal">
             <div class="package-card"><div class="package-icon-wrapper"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div><div class="package-content"><h3>External Users System</h3><p data-i18n="pkg_users">Видно юзеров с тем же External</p></div><div class="package-glow"></div></div>
             <div class="package-card"><div class="package-icon-wrapper"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14,2 14,8 20,8"></polyline></svg></div><div class="package-content"><h3>Lua Scripts</h3><p data-i18n="pkg_lua">Собственные скрипты</p></div><div class="package-glow"></div></div>
-            <div class="package-card" id="pkgHwid"><div class="package-icon-wrapper"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg></div><div class="package-content"><h3>HWID Bypass</h3><p data-i18n="pkg_hwid">Наёбка античит-систем</p></div><div class="package-glow"></div></div>
+            <div class="package-card"><div class="package-icon-wrapper"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M9 12l2 2 4-4"></path></svg></div><div class="package-content"><h3>HWID Bypass</h3><p data-i18n="pkg_hwid">Наёбка античит-систем</p></div><div class="package-glow"></div></div>
             <div class="package-card"><div class="package-icon-wrapper"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12"></path><circle cx="18" cy="6" r="3"></circle><circle cx="6" cy="18" r="3"></circle><path d="M18 9a9 9 0 0 1-9 9"></path></svg></div><div class="package-content"><h3>Devblog 217-308</h3><p data-i18n="pkg_dev">Поддержка нормальных девблогов</p></div><div class="package-glow"></div></div>
             <div class="package-card"><div class="package-icon-wrapper"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></div><div class="package-content"><h3 data-i18n="pkg_cloud_t">Облачные конфиги</h3><p data-i18n="pkg_cloud_d">Синхронизация настроек между устройствами</p></div><div class="package-glow"></div></div>
             <div class="package-card"><div class="package-icon-wrapper"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline></svg></div><div class="package-content"><h3 data-i18n="pkg_market_t">Маркетплейс система</h3><p data-i18n="pkg_market_d">Покупка и продажа конфигов/скриптов</p></div><div class="package-glow"></div></div>
             <div class="package-card"><div class="package-icon-wrapper"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div><div class="package-content"><h3 data-i18n="pkg_case_t">Ежедневный кейс</h3><p data-i18n="pkg_case_d">Бесплатные награды каждый день</p></div><div class="package-glow"></div></div>
             <div class="package-card"><div class="package-icon-wrapper"><svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg></div><div class="package-content"><h3 data-i18n="pkg_support_t">Быстрая техподдержка</h3><p data-i18n="pkg_support_d">Моментальная помощь в решении проблем</p></div><div class="package-glow"></div></div>
         </div>
-        <p id="pkgLiteNote" style="display:none;text-align:center;margin-top:24px;color:var(--red);font-size:13px;font-family:var(--mono);" data-i18n="pkg_lite_note">Пункты, помеченные красным, недоступны в Lite-версии.</p>
     </section>
 
-    <!-- PRICING -->
     <section class="section" id="pricing">
         <div class="section-header reveal">
             <div class="section-label" data-i18n="price_label">Тарифы</div>
@@ -618,7 +518,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
         <div class="price-grid" id="priceGrid"></div>
     </section>
 
-    <!-- START -->
     <section class="section" id="start">
         <div class="section-header reveal">
             <div class="section-label" data-i18n="start_label">Старт</div>
@@ -631,29 +530,26 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="section" id="faq">
         <div class="section-header reveal">
             <div class="section-label">FAQ</div>
             <h2 class="section-title"><span class="gradient" data-i18n="faq_title">Частые вопросы</span></h2>
         </div>
         <div class="faq-grid reveal">
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq1_q">На каких серверах работает?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq1_a">Полная версия: все популярные девблоги 196–308, включая SnowRust. Lite: только 240–266. Полный список обходов античитов — в блоке «Полный комплект» выше.</p></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq2_q">Что делать, если что-то не запускается?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq2_a">Для полной версии — напишите в Discord megabro69. Для Lite техническая поддержка не предоставляется: используйте инструкцию из выдачи.</p></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq3_q">Можно ли перенести подписку на другой ПК?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq3_a">В полной версии доступны встроенные HWID-спуферы и сброс привязки по запросу в поддержке. В Lite встроенных спуферов нет.</p></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq4_q">Есть ли пробный период?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq4_a">Тариф на 1 день стоит всего 99 рублей. Для Lite — 49 рублей, но помните: в Lite только 240–266, без HWID-спуферов и без поддержки.</p></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq5_q">Как обновляется софт после выхода нового девблога?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq5_a">Полная версия обновляется в течение 24 часов после обновления игры. Lite поддерживает только ветку 240–266 и может не обновляться под новые девблоги.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq1_q">На каких серверах работает?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq1_a">Поддерживаются все популярные девблоги: от 196 до 308, включая SnowRust. Полный список обходов античитов — в блоке «Полный комплект» выше.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq2_q">Что делать, если что-то не запускается?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq2_a">Напишите в Discord megabro69 — техподдержка отвечает быстро и поможет настроить под вашу систему.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq3_q">Можно ли перенести подписку на другой ПК?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq3_a">Да. Встроенные HWID-спуферы и сброс привязки доступны по запросу в поддержке.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq4_q">Есть ли пробный период?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq4_a">Тариф на 1 день стоит всего 99 рублей — этого достаточно, чтобы всё проверить. Ежедневный кейс в личном кабинете даёт бесплатные бонусы активным пользователям.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq5_q">Как обновляется софт после выхода нового девблога?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq5_a">Обновления выходят в течение 24 часов после обновления игры. Для владельцев подписки они бесплатны и автоматические.</p></div></div>
         </div>
     </section>
 
-    <!-- CTA -->
     <div class="cta-block reveal">
         <h2 data-i18n="cta_title">Готов начать?</h2>
         <p data-i18n="cta_sub">Присоединяйся к сообществу MegaBoss.wtf и получи полный контроль над игрой.</p>
         <a href="#" onclick="buyCurrent(event)" class="btn-primary"><span data-i18n="cta_btn">Приобрести</span> <i class="fas fa-arrow-right"></i></a>
     </div>
 
-    <!-- CONTACTS -->
     <section class="section" id="contact">
         <div class="section-header reveal">
             <div class="section-label" data-i18n="contact_label">Связь</div>
@@ -669,7 +565,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                 <div class="contact-info"><div class="label">DonationAlerts</div><div class="value">MegaBro69</div></div>
             </a>
         </div>
-        <p style="text-align:center;margin-top:20px;color:var(--dim);font-size:12px;font-family:var(--mono);" data-i18n="contact_note">Техподдержка оказывается только по полной версии. Lite — без поддержки.</p>
     </section>
 
     <footer class="footer">
@@ -724,7 +619,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
     <div class="account-footer">MegaBoss.wtf</div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"><div class="toast-icon">✓</div><span id="toastMessage">Готово</span></div>
 
 <!-- ПОКУПКА -->
@@ -733,8 +627,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
         <div style="margin-bottom:16px;"><div style="width:64px;height:64px;margin:0 auto;background:rgba(93,120,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(93,120,255,0.3);"><span style="font-size:28px;color:var(--accent);font-family:var(--mono);font-weight:700;">M</span></div></div>
         <h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 6px;font-family:var(--sans);" data-i18n="buy_title">Оформление покупки</h2>
         <p style="color:rgba(255,255,255,0.5);font-size:14px;margin:0 0 6px;font-family:var(--sans);"><span id="buyProduct" style="color:#fff;font-weight:600;"></span></p>
-        <p style="color:rgba(255,255,255,0.5);font-size:14px;margin:0 0 12px;font-family:var(--sans);"><span id="buyPlan">30 Дней</span> — <span id="buyPrice" style="color:var(--accent);font-weight:700;">500 ₽</span></p>
-        <p id="buyLiteNotice" style="display:none;color:#ffb3b3;font-size:12px;font-family:var(--mono);margin:0 0 20px;padding:8px 12px;background:rgba(255,77,77,.08);border:1px solid rgba(255,77,77,.3);border-radius:8px;" data-i18n="buy_lite_notice">Lite: только девблоги 240–266, без HWID-спуфера и без поддержки.</p>
+        <p style="color:rgba(255,255,255,0.5);font-size:14px;margin:0 0 28px;font-family:var(--sans);"><span id="buyPlan">30 Дней</span> — <span id="buyPrice" style="color:var(--accent);font-weight:700;">500 ₽</span></p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
             <a href="#" onclick="event.preventDefault();navigator.clipboard.writeText('megabro69');closeBuyModal();showToast(t('toast_discord_copied'));" style="flex:1;min-width:140px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;border:1px solid rgba(93,120,255,0.2);border-radius:16px;background:rgba(0,0,0,0.2);text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(93,120,255,0.5)';this.style.background='rgba(93,120,255,0.06)'" onmouseout="this.style.borderColor='rgba(93,120,255,0.2)';this.style.background='rgba(0,0,0,0.2)'">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32" style="color:#5865F2;"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
@@ -751,7 +644,14 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                 <div style="color:#fff;font-weight:600;font-size:14px;font-family:var(--sans);">FunPay</div>
                 <div style="color:rgba(255,255,255,0.4);font-size:11px;font-family:var(--sans);" data-i18n="buy_shop">Через магазин</div>
             </a>
-            <!-- CRYPTO BUTTON -->
+            <!-- TELEGRAM STARS -->
+            <a href="#" onclick="event.preventDefault();copyTelegramStars();" style="flex:1;min-width:140px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;border:1px solid rgba(255,205,70,0.3);border-radius:16px;background:rgba(0,0,0,0.2);text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(255,205,70,0.7)';this.style.background='rgba(255,205,70,0.06)'" onmouseout="this.style.borderColor='rgba(255,205,70,0.3)';this.style.background='rgba(0,0,0,0.2)'">
+                <div style="font-size:32px;line-height:1;color:#ffcd46;">⭐</div>
+                <div style="color:#fff;font-weight:600;font-size:14px;font-family:var(--sans);">Telegram Stars</div>
+                <div id="buyStarsAmount" style="color:#ffcd46;font-size:12px;font-weight:700;font-family:var(--mono);">— ⭐</div>
+                <div style="color:rgba(255,255,255,0.4);font-size:11px;font-family:var(--sans);">Скопировать сумму</div>
+            </a>
+            <!-- CRYPTO -->
             <a href="#" onclick="event.preventDefault();closeBuyModal();openCryptoModal();" style="flex:1;min-width:140px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;border:1px solid rgba(247,147,26,0.25);border-radius:16px;background:rgba(0,0,0,0.2);text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(247,147,26,0.6)';this.style.background='rgba(247,147,26,0.06)'" onmouseout="this.style.borderColor='rgba(247,147,26,0.25)';this.style.background='rgba(0,0,0,0.2)'">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32" style="color:#f7931a;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 8.9c.2-1.3-.8-2-2.1-2.4l.4-1.7-1.1-.3-.4 1.6c-.3-.1-.6-.1-.9-.2l.4-1.6-1.1-.3-.4 1.7c-.2-.1-.5-.1-.7-.2l-1.5-.4-.3 1.2s.8.2.8.2c.5.1.5.4.5.6l-1 4.1c0 .1-.1.3-.4.2 0 0-.8-.2-.8-.2l-.6 1.3 1.4.4c.3.1.5.1.8.2l-.4 1.7 1.1.3.4-1.7c.3.1.5.2.8.2l-.4 1.7 1.1.3.4-1.7c1.9.4 3.2.2 3.8-1.5.5-1.3 0-2.1-.9-2.6.7-.2 1.2-.6 1.3-1.5zm-2.5 3.3c-.3 1.4-2.6.6-3.4.4l.6-2.4c.8.2 3.1.6 2.8 2zm.3-3.3c-.3 1.2-2.2.6-2.8.4l.5-2.2c.6.1 2.6.5 2.3 1.8z"/></svg>
                 <div style="color:#fff;font-weight:600;font-size:14px;font-family:var(--sans);">Crypto</div>
@@ -828,39 +728,31 @@ const I18N = {
     pick_label:'Выберите продукт',
     pick_full_sub:'Полная версия', pick_full_desc:'Полный набор функций External. Максимум возможностей.',
     pick_lite_sub:'Упрощённая версия', pick_lite_desc:'Базовый набор по сниженной цене — в 2 раза дешевле.',
-    feat_label:'Rust External', feat_title:'Полный комплект',
-    sec_title:'Полный обход античитов девблогов.',
-    sec_sub_full:'Для полной версии: 196–308. Lite — только 240–266.',
-    sec_sub_lite:'Lite: только 240–266. Полная версия: 196–308.',
+    feat_label:'Rust External', feat_title:'Полный комплект', sec_title:'Полный обход античитов девблогов.',
     supported_dev:'Поддерживаемые девблоги',
-    lite_banner_t:'Выбран Lite — ограниченный набор',
-    lite_banner_d:'Ниже зачёркнутые и подписанные функции недоступны в Lite. Доступны только девблоги 240–266, без встроенного HWID-спуфера и без поддержки.',
     pkg_label:'дополнения', pkg_title:'Главные дополнения комплекта',
     pkg_users:'Видно юзеров с тем же External', pkg_lua:'Собственные скрипты', pkg_hwid:'Наёбка античит-систем',
     pkg_dev:'Поддержка нормальных девблогов', pkg_cloud_t:'Облачные конфиги', pkg_cloud_d:'Синхронизация настроек между устройствами',
     pkg_market_t:'Маркетплейс система', pkg_market_d:'Покупка и продажа конфигов/скриптов',
     pkg_case_t:'Ежедневный кейс', pkg_case_d:'Бесплатные награды каждый день',
     pkg_support_t:'Быстрая техподдержка', pkg_support_d:'Моментальная помощь в решении проблем',
-    pkg_lite_note:'Пункты, помеченные красным, недоступны в Lite-версии.',
     price_label:'Тарифы', price_title:'Доступ к софту',
     start_label:'Старт', start_title:'Начать за 3 шага',
     step1_t:'Оплата', step1_d:'Выберите тариф и оплатите удобным способом — DonationAlerts моментально, или напишите в Discord для оплаты картой/криптой. FunPay — через магазин с ручной выдачей.',
     step2_t:'Выдача доступа', step2_d:'Ключ и инструкция приходят в течение пары минут. Лоадер скачивается в один клик, установка не требует танцев с бубном.',
     step3_t:'Игра', step3_d:'Запускаете, вводите ключ, настраиваете конфиг под себя. Облачные конфиги синхронизируют настройки на всех устройствах.',
     faq_title:'Частые вопросы',
-    faq1_q:'На каких серверах работает?', faq1_a:'Полная версия: все популярные девблоги 196–308, включая SnowRust. Lite: только 240–266. Полный список обходов античитов — в блоке «Полный комплект» выше.',
-    faq2_q:'Что делать, если что-то не запускается?', faq2_a:'Для полной версии — напишите в Discord megabro69. Для Lite техническая поддержка не предоставляется: используйте инструкцию из выдачи.',
-    faq3_q:'Можно ли перенести подписку на другой ПК?', faq3_a:'В полной версии доступны встроенные HWID-спуферы и сброс привязки по запросу в поддержке. В Lite встроенных спуферов нет.',
-    faq4_q:'Есть ли пробный период?', faq4_a:'Тариф на 1 день стоит всего 99 рублей. Для Lite — 49 рублей, но помните: в Lite только 240–266, без HWID-спуферов и без поддержки.',
-    faq5_q:'Как обновляется софт после выхода нового девблога?', faq5_a:'Полная версия обновляется в течение 24 часов после обновления игры. Lite поддерживает только ветку 240–266 и может не обновляться под новые девблоги.',
+    faq1_q:'На каких серверах работает?', faq1_a:'Поддерживаются все популярные девблоги: от 196 до 308, включая SnowRust. Полный список обходов античитов — в блоке «Полный комплект» выше.',
+    faq2_q:'Что делать, если что-то не запускается?', faq2_a:'Напишите в Discord megabro69 — техподдержка отвечает быстро и поможет настроить под вашу систему.',
+    faq3_q:'Можно ли перенести подписку на другой ПК?', faq3_a:'Да. Встроенные HWID-спуферы и сброс привязки доступны по запросу в поддержке.',
+    faq4_q:'Есть ли пробный период?', faq4_a:'Тариф на 1 день стоит всего 99 рублей — этого достаточно, чтобы всё проверить. Ежедневный кейс в личном кабинете даёт бесплатные бонусы активным пользователям.',
+    faq5_q:'Как обновляется софт после выхода нового девблога?', faq5_a:'Обновления выходят в течение 24 часов после обновления игры. Для владельцев подписки они бесплатны и автоматические.',
     cta_title:'Готов начать?', cta_sub:'Присоединяйся к сообществу MegaBoss.wtf и получи полный контроль над игрой.', cta_btn:'Приобрести',
-    contact_label:'Связь', contact_title:'Поддержка', contact_note:'Техподдержка оказывается только по полной версии. Lite — без поддержки.',
-    footer_copy:'© 2026 MegaBoss.wtf. Все права защищены.', footer_policy:'Политика',
+    contact_label:'Связь', contact_title:'Поддержка', footer_copy:'© 2026 MegaBoss.wtf. Все права защищены.', footer_policy:'Политика',
     reg_title:'Создание аккаунта', reg_sub:'Введите данные для регистрации', reg_user:'Имя пользователя', reg_pass:'Пароль', reg_submit:'Зарегистрироваться', reg_cancel:'Отмена',
     acc_title:'Личный кабинет', acc_user:'Пользователь', acc_status:'Статус', acc_sub:'Подписка',
     acc_settings:'Настройки', acc_subs:'Подписки', acc_history:'История', acc_logout:'Выйти',
     buy_title:'Оформление покупки', buy_copy_nick:'Скопировать ник', buy_instant:'Моментальная покупка', buy_shop:'Через магазин', buy_cancel:'Отмена',
-    buy_lite_notice:'Lite: только девблоги 240–266, без HWID-спуфера и без поддержки.',
     buy_crypto:'Discord megabro69',
     fp_title:'Оплата через FunPay', fp_sub:'Прежде чем перейти — прочитай важное', fp_warn_title:'Внимание: неэффективный способ',
     fp_warn_1:'FunPay обрабатывает заказы <b>вручную</b> — задержка выдачи до <b>2 дней</b>.',
@@ -897,39 +789,31 @@ const I18N = {
     pick_label:'Choose product',
     pick_full_sub:'Full version', pick_full_desc:'Full External feature set. Maximum capabilities.',
     pick_lite_sub:'Lite version', pick_lite_desc:'Basic set at a reduced price — 2x cheaper.',
-    feat_label:'Rust External', feat_title:'Full package',
-    sec_title:'Full anti-cheat bypass for devblogs.',
-    sec_sub_full:'Full version: 196–308. Lite — only 240–266.',
-    sec_sub_lite:'Lite: only 240–266. Full version: 196–308.',
+    feat_label:'Rust External', feat_title:'Full package', sec_title:'Full anti-cheat bypass for devblogs.',
     supported_dev:'Supported devblogs',
-    lite_banner_t:'Lite selected — limited feature set',
-    lite_banner_d:'Crossed-out and marked features below are not available in Lite. Only devblogs 240–266, no built-in HWID spoofer, no support.',
     pkg_label:'addons', pkg_title:'Key package addons',
     pkg_users:'See users of the same External', pkg_lua:'Custom scripts', pkg_hwid:'Anti-cheat system bypass',
     pkg_dev:'Support for mainstream devblogs', pkg_cloud_t:'Cloud configs', pkg_cloud_d:'Settings sync across devices',
     pkg_market_t:'Marketplace system', pkg_market_d:'Buy and sell configs/scripts',
     pkg_case_t:'Daily case', pkg_case_d:'Free rewards every day',
     pkg_support_t:'Fast tech support', pkg_support_d:'Instant help resolving issues',
-    pkg_lite_note:'Items marked red are unavailable in Lite.',
     price_label:'Pricing', price_title:'Software access',
     start_label:'Start', start_title:'Start in 3 steps',
     step1_t:'Payment', step1_d:'Pick a plan and pay conveniently — instant via DonationAlerts, or message us on Discord for card/crypto. FunPay — manual store delivery.',
     step2_t:'Access delivery', step2_d:'Key and instructions arrive within a couple of minutes. Loader downloads in one click, no ritual installation.',
     step3_t:'Play', step3_d:'Launch, enter your key, tune the config. Cloud configs sync settings across devices.',
     faq_title:'Frequently asked',
-    faq1_q:'Which servers does it work on?', faq1_a:'Full version: all mainstream devblogs 196–308, including SnowRust. Lite: only 240–266. Full anti-cheat bypass list — in the "Full package" block above.',
-    faq2_q:'What if something does not launch?', faq2_a:'For the full version — message Discord megabro69. Lite has no tech support: use the included instructions.',
-    faq3_q:'Can I move the subscription to another PC?', faq3_a:'The full version has built-in HWID spoofers and binding reset on request via support. Lite has no built-in spoofers.',
-    faq4_q:'Is there a trial period?', faq4_a:'The 1-day plan costs only 99 rubles. Lite is 49 rubles, but remember: Lite is only 240–266, no HWID spoofers, no support.',
-    faq5_q:'How is the software updated after a new devblog?', faq5_a:'The full version updates within 24 hours after the game update. Lite supports only the 240–266 branch and may not update for new devblogs.',
+    faq1_q:'Which servers does it work on?', faq1_a:'All mainstream devblogs are supported: from 196 to 308, including SnowRust. Full anti-cheat bypass list — in the "Full package" block above.',
+    faq2_q:'What if something does not launch?', faq2_a:'Message Discord megabro69 — support replies fast and helps tune it for your system.',
+    faq3_q:'Can I move the subscription to another PC?', faq3_a:'Yes. Built-in HWID spoofers and binding reset are available on request via support.',
+    faq4_q:'Is there a trial period?', faq4_a:'The 1-day plan costs only 99 rubles — enough to test everything. The daily case in your account gives free bonuses to active users.',
+    faq5_q:'How is the software updated after a new devblog?', faq5_a:'Updates ship within 24 hours after the game update. They are free and automatic for subscribers.',
     cta_title:'Ready to start?', cta_sub:'Join the MegaBoss.wtf community and get full control over the game.', cta_btn:'Buy',
-    contact_label:'Contact', contact_title:'Support', contact_note:'Tech support is provided for the full version only. Lite — no support.',
-    footer_copy:'© 2026 MegaBoss.wtf. All rights reserved.', footer_policy:'Policy',
+    contact_label:'Contact', contact_title:'Support', footer_copy:'© 2026 MegaBoss.wtf. All rights reserved.', footer_policy:'Policy',
     reg_title:'Create account', reg_sub:'Enter your details to sign up', reg_user:'Username', reg_pass:'Password', reg_submit:'Sign up', reg_cancel:'Cancel',
     acc_title:'Account', acc_user:'User', acc_status:'Status', acc_sub:'Subscription',
     acc_settings:'Settings', acc_subs:'Subscriptions', acc_history:'History', acc_logout:'Log out',
     buy_title:'Checkout', buy_copy_nick:'Copy nickname', buy_instant:'Instant purchase', buy_shop:'Via store', buy_cancel:'Cancel',
-    buy_lite_notice:'Lite: devblogs 240–266 only, no HWID spoofer, no support.',
     buy_crypto:'Discord megabro69',
     fp_title:'Pay via FunPay', fp_sub:'Read this before you proceed', fp_warn_title:'Warning: slow method',
     fp_warn_1:'FunPay processes orders <b>manually</b> — delivery delay up to <b>2 days</b>.',
@@ -991,20 +875,13 @@ function selectCurrency(code){
   closeCurrencyDropdown();
   const buyModal = document.getElementById('buyModal');
   if(buyModal && buyModal.style.display === 'flex'){
-    const plan = PLANS[2];
-    document.getElementById('buyPrice').textContent = formatPrice(getPrice(plan));
+    document.getElementById('buyPrice').textContent = formatPrice(currentBuyPriceRub);
+    updateTelegramStarsAmount();
   }
 }
-function toggleCurrencyDropdown(e){
-  e.stopPropagation();
-  document.getElementById('currencyDropdown').classList.toggle('open');
-}
-function closeCurrencyDropdown(){
-  document.getElementById('currencyDropdown').classList.remove('open');
-}
-document.addEventListener('click', function(e){
-  if(!e.target.closest('.currency-switch')) closeCurrencyDropdown();
-});
+function toggleCurrencyDropdown(e){ e.stopPropagation(); document.getElementById('currencyDropdown').classList.toggle('open'); }
+function closeCurrencyDropdown(){ document.getElementById('currencyDropdown').classList.remove('open'); }
+document.addEventListener('click', function(e){ if(!e.target.closest('.currency-switch')) closeCurrencyDropdown(); });
 document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('.currency-option').forEach((opt, idx) => {
     const codes = ['ru','ua','kz','us'];
@@ -1040,41 +917,11 @@ function renderPrices(){
     </div>`;
   }).join('');
 }
-function applyProductUI(){
-  const isLite = currentProduct === 'lite';
-  document.querySelectorAll('.product-tile').forEach(tile=>{ tile.classList.toggle('active', tile.dataset.product===currentProduct); });
-  const lw = document.getElementById('liteWarning'); if(lw) lw.classList.toggle('show', isLite);
-  const lb = document.getElementById('liteBanner'); if(lb) lb.classList.toggle('show', isLite);
-  document.getElementById('secTagsFull').style.display = isLite ? 'none' : 'flex';
-  document.getElementById('secTagsFull2').style.display = isLite ? 'none' : 'flex';
-  document.getElementById('secTagsLite').style.display = isLite ? 'flex' : 'none';
-  document.getElementById('secTagsLite2').style.display = isLite ? 'flex' : 'none';
-  document.getElementById('marqueeFull').style.display = isLite ? 'none' : 'block';
-  document.getElementById('marqueeLite').style.display = isLite ? 'block' : 'none';
-  document.querySelectorAll('.feature-card li.liteLock').forEach(li=>li.classList.toggle('locked', isLite));
-  const pkgIdsToLock = ['pkgHwid'];
-  pkgIdsToLock.forEach(id=>{
-    const el = document.getElementById(id);
-    if(el){
-      el.classList.toggle('off', isLite);
-      let lock = el.querySelector('.pkg-lock');
-      if(isLite){
-        if(!lock){ lock = document.createElement('div'); lock.className = 'pkg-lock lite-lock'; lock.textContent = '✕ Lite'; el.appendChild(lock); }
-      } else if(lock){ lock.remove(); }
-    }
-  });
-  const note = document.getElementById('pkgLiteNote'); if(note) note.style.display = isLite ? 'block' : 'none';
-  const setNum = (id, val, plus) => { const el = document.getElementById(id); if(!el) return; el.innerHTML = plus ? val + '<span>+</span>' : String(val); };
-  if(isLite){ setNum('statSettingsNum', 220, true); setNum('statDevblogsNum', 7, false); setNum('statBypassNum', 7, false); }
-  else { setNum('statSettingsNum', 380, true); setNum('statDevblogsNum', 15, false); setNum('statBypassNum', 200, true); }
-  const secSub = document.getElementById('secSub');
-  if(secSub) secSub.textContent = isLite ? t('sec_sub_lite') : t('sec_sub_full');
-}
 function selectProduct(prod){
   currentProduct = prod;
   localStorage.setItem('mb_product', prod);
+  document.querySelectorAll('.product-tile').forEach(tile=>{ tile.classList.toggle('active', tile.dataset.product===prod); });
   renderPrices();
-  applyProductUI();
 }
 function buyCurrent(e){
   if(e) e.preventDefault();
@@ -1265,12 +1112,29 @@ document.addEventListener('click', function(e){
   }
 });
 
+let currentBuyPriceRub = 0;
+const TELEGRAM_STAR_FUNPAY_RATE_RUB = 1.51; // ориентир, не live-курс
+function getTelegramStarsAmount(priceRub){ return Math.ceil(priceRub / TELEGRAM_STAR_FUNPAY_RATE_RUB); }
+function updateTelegramStarsAmount(){
+  const el = document.getElementById('buyStarsAmount');
+  if(el) el.textContent = getTelegramStarsAmount(currentBuyPriceRub).toLocaleString('ru-RU') + ' ⭐';
+}
+async function copyTelegramStars(){
+  const amount = getTelegramStarsAmount(currentBuyPriceRub);
+  try {
+    await navigator.clipboard.writeText(String(amount));
+    showToast('Сумма ' + amount + ' ⭐ скопирована');
+  } catch(e) {
+    showToast('Количество для оплаты: ' + amount + ' ⭐');
+  }
+}
 function openBuyModal(event, plan, priceRub){
   if(event) event.preventDefault();
+  currentBuyPriceRub = Number(priceRub) || 0;
   document.getElementById('buyProduct').textContent = PRODUCT_NAMES[currentProduct];
   document.getElementById('buyPlan').textContent = plan;
   document.getElementById('buyPrice').textContent = formatPrice(priceRub);
-  document.getElementById('buyLiteNotice').style.display = currentProduct==='lite' ? 'block' : 'none';
+  updateTelegramStarsAmount();
   const m = document.getElementById('buyModal'); m.style.display='flex';
   const c = m.querySelector('div');
   setTimeout(()=>{ c.style.transform='scale(1) translateY(0)'; }, 50);
@@ -1292,7 +1156,7 @@ function closeFunPayModal(){
 }
 document.getElementById('funPayModal').addEventListener('click', function(e){ if(e.target===this) closeFunPayModal(); });
 
-/* ==================== CRYPTO MODAL ==================== */
+/* ==================== CRYPTO ==================== */
 function openCryptoModal(){
   const m = document.getElementById('cryptoModal'); m.style.display='flex';
   setTimeout(()=>document.getElementById('cryptoContent').classList.add('open'), 50);
