@@ -444,9 +444,9 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                     <div class="pt-icon">L</div>
                     <h3>MegaBoss.wtf Lite</h3>
                     <div class="pt-sub" data-i18n="pick_lite_sub">Упрощённая версия</div>
-                    <div class="pt-desc" data-i18n="pick_lite_desc">Базовый набор по сниженной цене — в 2 раза дешевле.</div>
+                    <div class="pt-desc" data-i18n="pick_lite_desc">Базовый набор по сниженной цене — на 30% дешевле.</div>
                     <div class="pt-limits">
-                        <span class="lite-lock">✕ только 240–265</span>
+                        <span class="lite-lock">✕ Old/My/Magix/Sunfire/Company only</span>
                         <span class="lite-lock">✕ без HWID</span>
                         <span class="lite-lock">✕ без поддержки</span>
                     </div>
@@ -455,11 +455,11 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
             <div class="lite-warning" id="liteWarning">
                 <h4><i class="fas fa-exclamation-triangle"></i> <span data-i18n="lite_warn_title">Ограничения Lite-версии</span></h4>
                 <ul>
-                    <li data-i18n-html="lite_warn_1">Девблоги <b>только 240–265</b> (276–308, 196, 217, не поддерживаются).</li>
+                    <li data-i18n-html="lite_warn_1">Серверы <b>только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust</b> (остальные девблоги не поддерживаются).</li>
                     <li data-i18n-html="lite_warn_2">Встроенный HWID-спуфер <b>отсутствует</b> — обход железных банов недоступен.</li>
                     <li data-i18n-html="lite_warn_3">Техническая поддержка по Lite <b>не оказывается</b>.</li>
-                    <li data-i18n-html="lite_warn_4">Нет автообновлений под новые девблоги — только ветка 240–265.</li>
-                    <li class="ok" data-i18n-html="lite_warn_5">Подходит для теста и для серверов на 240–265.</li>
+                    <li data-i18n-html="lite_warn_4">Нет автообновлений под новые девблоги — только указанные серверы.</li>
+                    <li class="ok" data-i18n-html="lite_warn_5">Подходит для теста и для игры на OldRust, MyRust, MagixRust, SunfireRust, CompanyRust.</li>
                 </ul>
             </div>
         </div>
@@ -470,7 +470,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
         <div class="lite-banner-icon"><i class="fas fa-info-circle"></i></div>
         <div class="lite-banner-text">
             <h4 data-i18n="lite_banner_t">Выбран Lite — ограниченный набор</h4>
-            <p data-i18n="lite_banner_d">Ниже отмеченные пункты недоступны в Lite. Только девблоги 240–266, без встроенного HWID-спуфера и без поддержки.</p>
+            <p data-i18n="lite_banner_d">Ниже отмеченные пункты недоступны в Lite. Только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust, без встроенного HWID-спуфера и без поддержки.</p>
         </div>
     </div>
 
@@ -510,12 +510,10 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
         </div>
         <div class="marquee-wrap reveal" id="marqueeLite" style="display:none;">
             <div class="marquee-track">
-                <span class="marquee-chip">DEV 240</span><span class="marquee-chip">DEV 246</span><span class="marquee-chip">DEV 247</span>
-                <span class="marquee-chip">DEV 248</span><span class="marquee-chip">DEV 261</span><span class="marquee-chip">DEV 265</span>
-                <span class="marquee-chip">DEV 266</span>
-                <span class="marquee-chip">DEV 240</span><span class="marquee-chip">DEV 246</span><span class="marquee-chip">DEV 247</span>
-                <span class="marquee-chip">DEV 248</span><span class="marquee-chip">DEV 261</span><span class="marquee-chip">DEV 265</span>
-                <span class="marquee-chip">DEV 266</span>
+                <span class="marquee-chip">OldRust</span><span class="marquee-chip">MyRust</span><span class="marquee-chip">MagixRust</span>
+                <span class="marquee-chip">SunfireRust</span><span class="marquee-chip">CompanyRust</span>
+                <span class="marquee-chip">OldRust</span><span class="marquee-chip">MyRust</span><span class="marquee-chip">MagixRust</span>
+                <span class="marquee-chip">SunfireRust</span><span class="marquee-chip">CompanyRust</span>
             </div>
         </div>
 
@@ -602,12 +600,12 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
             <h2 class="section-title"><span class="gradient" data-i18n="faq_title">Частые вопросы</span></h2>
         </div>
         <div class="faq-grid reveal">
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq1_q">На каких серверах работает?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq1_a">Полная версия: девблоги 196–308 и SnowRust. Lite: только 240–266. Остальные девблоги в Lite не поддерживаются.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq1_q">На каких серверах работает?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq1_a">Полная версия: девблоги 196–308 и SnowRust. Lite: только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust. Остальные серверы в Lite не поддерживаются.</p></div></div>
             <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq2_q">Что делать, если что-то не запускается?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq2_a">Для полной версии — Discord megabro69. Для Lite техподдержка не предоставляется: используйте инструкцию из выдачи.</p></div></div>
             <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq3_q">Можно ли перенести подписку на другой ПК?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq3_a">Да, в полной версии. Встроенные HWID-спуферы и сброс привязки доступны по запросу в поддержке. В Lite HWID-спуфера нет.</p></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq4_q">Есть ли пробный период?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq4_a">Тариф на 1 день стоит всего 99 рублей — этого достаточно, чтобы всё проверить. Lite-версия на 1 день ещё дешевле, но с ограничениями по девблогам и без спуфера.</p></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq5_q">Как обновляется софт после выхода нового девблога?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq5_a">Полная версия: обновления в течение 24 часов после обновления игры, бесплатно и автоматически. Lite: автообновлений под новые девблоги нет — поддерживается только ветка 240–266.</p></div></div>
-            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq6_q">Чем Lite отличается от полной версии?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq6_a">Lite: только девблоги 240–266, без встроенного HWID-спуфера, без техподдержки и без автообновлений под новые девблоги. Дешевле в 2 раза.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq4_q">Есть ли пробный период?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq4_a">Тариф на 1 день стоит всего 99 рублей — этого достаточно, чтобы всё проверить. Lite-версия на 1 день ещё дешевле, но с ограничениями по серверам и без спуфера.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq5_q">Как обновляется софт после выхода нового девблога?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq5_a">Полная версия: обновления в течение 24 часов после обновления игры, бесплатно и автоматически. Lite: автообновлений под новые девблоги нет — поддерживаются только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust.</p></div></div>
+            <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span data-i18n="faq6_q">Чем Lite отличается от полной версии?</span><span class="plus">+</span></button><div class="faq-a"><p data-i18n="faq6_a">Lite: только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust, без встроенного HWID-спуфера, без техподдержки и без автообновлений под новые девблоги. Дешевле на 30%.</p></div></div>
         </div>
     </section>
 
@@ -696,7 +694,7 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
         <h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 6px;font-family:var(--sans);" data-i18n="buy_title">Оформление покупки</h2>
         <p style="color:rgba(255,255,255,0.5);font-size:14px;margin:0 0 6px;font-family:var(--sans);"><span id="buyProduct" style="color:#fff;font-weight:600;"></span></p>
         <p style="color:rgba(255,255,255,0.5);font-size:14px;margin:0 0 12px;font-family:var(--sans);"><span id="buyPlan">30 Дней</span> — <span id="buyPrice" style="color:var(--accent);font-weight:700;">500 ₽</span></p>
-        <p id="buyLiteNotice" style="display:none;color:#ffb3b3;font-size:12px;font-family:var(--mono);margin:0 0 20px;padding:8px 12px;background:rgba(255,77,77,.08);border:1px solid rgba(255,77,77,.3);border-radius:8px;" data-i18n="buy_lite_notice">Lite: только девблоги 240–266, без встроенного HWID-спуфера и без поддержки.</p>
+        <p id="buyLiteNotice" style="display:none;color:#ffb3b3;font-size:12px;font-family:var(--mono);margin:0 0 20px;padding:8px 12px;background:rgba(255,77,77,.08);border:1px solid rgba(255,77,77,.3);border-radius:8px;" data-i18n="buy_lite_notice">Lite: только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust, без встроенного HWID-спуфера и без поддержки.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
             <a href="#" onclick="event.preventDefault();navigator.clipboard.writeText('megabro69');closeBuyModal();showToast(t('toast_discord_copied'));" style="flex:1;min-width:140px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;border:1px solid rgba(93,120,255,0.2);border-radius:16px;background:rgba(0,0,0,0.2);text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(93,120,255,0.5)';this.style.background='rgba(93,120,255,0.06)'" onmouseout="this.style.borderColor='rgba(93,120,255,0.2)';this.style.background='rgba(0,0,0,0.2)'">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32" style="color:#5865F2;"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
@@ -796,15 +794,15 @@ const I18N = {
     stat_settings:'Настроек', stat_devblogs:'Девблогов', stat_detects:'Детектов', stat_bypass:'Обходов',
     pick_label:'Выберите продукт',
     pick_full_sub:'Полная версия', pick_full_desc:'Полный набор функций External. Максимум возможностей.',
-    pick_lite_sub:'Упрощённая версия', pick_lite_desc:'Базовый набор по сниженной цене — в 2 раза дешевле.',
+    pick_lite_sub:'Упрощённая версия', pick_lite_desc:'Базовый набор по сниженной цене — на 30% дешевле.',
     lite_warn_title:'Ограничения Lite-версии',
-    lite_warn_1:'Девблоги <b>только 240–266</b> (276–308, 196, 217, SnowRust не поддерживаются).',
+    lite_warn_1:'Серверы <b>только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust</b> (остальные девблоги не поддерживаются).',
     lite_warn_2:'Встроенный HWID-спуфер <b>отсутствует</b> — обход железных банов недоступен.',
     lite_warn_3:'Техническая поддержка по Lite <b>не оказывается</b>.',
-    lite_warn_4:'Нет автообновлений под новые девблоги — только ветка 240–266.',
-    lite_warn_5:'Подходит для теста и для серверов на 240–266.',
+    lite_warn_4:'Нет автообновлений под новые девблоги — только указанные серверы.',
+    lite_warn_5:'Подходит для теста и для игры на OldRust, MyRust, MagixRust, SunfireRust, CompanyRust.',
     lite_banner_t:'Выбран Lite — ограниченный набор',
-    lite_banner_d:'Ниже отмеченные пункты недоступны в Lite. Только девблоги 240–266, без встроенного HWID-спуфера и без поддержки.',
+    lite_banner_d:'Ниже отмеченные пункты недоступны в Lite. Только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust, без встроенного HWID-спуфера и без поддержки.',
     feat_label:'Rust External', feat_title:'Полный комплект', sec_title:'Полный обход античитов девблогов.',
     supported_dev:'Поддерживаемые девблоги',
     pkg_label:'дополнения', pkg_title:'Главные дополнения комплекта',
@@ -819,12 +817,12 @@ const I18N = {
     step2_t:'Выдача доступа', step2_d:'Ключ и инструкция приходят в течение пары минут. Лоадер скачивается в один клик, установка не требует танцев с бубном.',
     step3_t:'Игра', step3_d:'Запускаете, вводите ключ, настраиваете конфиг под себя. Облачные конфиги синхронизируют настройки на всех устройствах.',
     faq_title:'Частые вопросы',
-    faq1_q:'На каких серверах работает?', faq1_a:'Полная версия: девблоги 196–308 и SnowRust. Lite: только 240–266. Остальные девблоги в Lite не поддерживаются.',
+    faq1_q:'На каких серверах работает?', faq1_a:'Полная версия: девблоги 196–308 и SnowRust. Lite: только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust. Остальные серверы в Lite не поддерживаются.',
     faq2_q:'Что делать, если что-то не запускается?', faq2_a:'Для полной версии — Discord megabro69. Для Lite техподдержка не предоставляется: используйте инструкцию из выдачи.',
     faq3_q:'Можно ли перенести подписку на другой ПК?', faq3_a:'Да, в полной версии. Встроенные HWID-спуферы и сброс привязки доступны по запросу в поддержке. В Lite HWID-спуфера нет.',
-    faq4_q:'Есть ли пробный период?', faq4_a:'Тариф на 1 день стоит всего 99 рублей — этого достаточно, чтобы всё проверить. Lite-версия на 1 день ещё дешевле, но с ограничениями по девблогам и без спуфера.',
-    faq5_q:'Как обновляется софт после выхода нового девблога?', faq5_a:'Полная версия: обновления в течение 24 часов после обновления игры, бесплатно и автоматически. Lite: автообновлений под новые девблоги нет — поддерживается только ветка 240–266.',
-    faq6_q:'Чем Lite отличается от полной версии?', faq6_a:'Lite: только девблоги 240–266, без встроенного HWID-спуфера, без техподдержки и без автообновлений под новые девблоги. Дешевле в 2 раза.',
+    faq4_q:'Есть ли пробный период?', faq4_a:'Тариф на 1 день стоит всего 99 рублей — этого достаточно, чтобы всё проверить. Lite-версия на 1 день ещё дешевле, но с ограничениями по серверам и без спуфера.',
+    faq5_q:'Как обновляется софт после выхода нового девблога?', faq5_a:'Полная версия: обновления в течение 24 часов после обновления игры, бесплатно и автоматически. Lite: автообновлений под новые девблоги нет — поддерживаются только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust.',
+    faq6_q:'Чем Lite отличается от полной версии?', faq6_a:'Lite: только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust, без встроенного HWID-спуфера, без техподдержки и без автообновлений под новые девблоги. Дешевле на 30%.',
     cta_title:'Готов начать?', cta_sub:'Присоединяйся к сообществу MegaBoss.wtf и получи полный контроль над игрой.', cta_btn:'Приобрести',
     contact_label:'Связь', contact_title:'Поддержка', contact_note:'Техподдержка только для полной версии. Lite — без поддержки.',
     footer_copy:'© 2026 MegaBoss.wtf. Все права защищены.', footer_policy:'Политика',
@@ -832,7 +830,7 @@ const I18N = {
     acc_title:'Личный кабинет', acc_user:'Пользователь', acc_status:'Статус', acc_sub:'Подписка',
     acc_settings:'Настройки', acc_subs:'Подписки', acc_history:'История', acc_logout:'Выйти',
     buy_title:'Оформление покупки', buy_copy_nick:'Скопировать ник', buy_instant:'Моментальная покупка', buy_shop:'Через магазин', buy_cancel:'Отмена',
-    buy_lite_notice:'Lite: только девблоги 240–266, без встроенного HWID-спуфера и без поддержки.',
+    buy_lite_notice:'Lite: только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust, без встроенного HWID-спуфера и без поддержки.',
     buy_crypto:'Discord megabro69',
     fp_title:'Оплата через FunPay', fp_sub:'Прежде чем перейти — прочитай важное', fp_warn_title:'Внимание: неэффективный способ',
     fp_warn_1:'FunPay обрабатывает заказы <b>вручную</b> — задержка выдачи до <b>2 дней</b>.',
@@ -868,15 +866,15 @@ const I18N = {
     stat_settings:'Settings', stat_devblogs:'Devblogs', stat_detects:'Detects', stat_bypass:'Bypasses',
     pick_label:'Choose product',
     pick_full_sub:'Full version', pick_full_desc:'Full External feature set. Maximum capabilities.',
-    pick_lite_sub:'Lite version', pick_lite_desc:'Basic set at a reduced price — 2x cheaper.',
+    pick_lite_sub:'Lite version', pick_lite_desc:'Basic set at a reduced price — 30% cheaper.',
     lite_warn_title:'Lite version limitations',
-    lite_warn_1:'Devblogs <b>240–266 only</b> (276–308, 196, 217, SnowRust are not supported).',
+    lite_warn_1:'Servers <b>OldRust, MyRust, MagixRust, SunfireRust, CompanyRust only</b> (other devblogs are not supported).',
     lite_warn_2:'Built-in HWID spoofer <b>is absent</b> — hardware ban bypass unavailable.',
     lite_warn_3:'Technical support for Lite <b>is not provided</b>.',
-    lite_warn_4:'No auto-updates for new devblogs — 240–266 branch only.',
-    lite_warn_5:'Suitable for testing and for servers on 240–266.',
+    lite_warn_4:'No auto-updates for new devblogs — listed servers only.',
+    lite_warn_5:'Suitable for testing and for playing on OldRust, MyRust, MagixRust, SunfireRust, CompanyRust.',
     lite_banner_t:'Lite selected — limited feature set',
-    lite_banner_d:'Marked items below are unavailable in Lite. Devblogs 240–266 only, no built-in HWID spoofer, no support.',
+    lite_banner_d:'Marked items below are unavailable in Lite. OldRust, MyRust, MagixRust, SunfireRust, CompanyRust only, no built-in HWID spoofer, no support.',
     feat_label:'Rust External', feat_title:'Full package', sec_title:'Full anti-cheat bypass for devblogs.',
     supported_dev:'Supported devblogs',
     pkg_label:'addons', pkg_title:'Key package addons',
@@ -891,12 +889,12 @@ const I18N = {
     step2_t:'Access delivery', step2_d:'Key and instructions arrive within a couple of minutes. Loader downloads in one click, no ritual installation.',
     step3_t:'Play', step3_d:'Launch, enter your key, tune the config. Cloud configs sync settings across devices.',
     faq_title:'Frequently asked',
-    faq1_q:'Which servers does it work on?', faq1_a:'Full version: devblogs 196–308 and SnowRust. Lite: 240–266 only. Other devblogs are not supported in Lite.',
+    faq1_q:'Which servers does it work on?', faq1_a:'Full version: devblogs 196–308 and SnowRust. Lite: OldRust, MyRust, MagixRust, SunfireRust, CompanyRust only. Other servers are not supported in Lite.',
     faq2_q:'What if something does not launch?', faq2_a:'Full version — Discord megabro69. Lite has no tech support: use the included instructions.',
     faq3_q:'Can I move the subscription to another PC?', faq3_a:'Yes, in the full version. Built-in HWID spoofers and binding reset are available on request via support. Lite has no HWID spoofer.',
-    faq4_q:'Is there a trial period?', faq4_a:'The 1-day plan costs only 99 rubles — enough to test everything. The Lite 1-day plan is even cheaper, but with devblog restrictions and no spoofer.',
-    faq5_q:'How is the software updated after a new devblog?', faq5_a:'Full version: updates ship within 24 hours after the game update, free and automatic. Lite: no auto-updates for new devblogs — only the 240–266 branch is supported.',
-    faq6_q:'How is Lite different from the full version?', faq6_a:'Lite: devblogs 240–266 only, no built-in HWID spoofer, no tech support and no auto-updates for new devblogs. 2x cheaper.',
+    faq4_q:'Is there a trial period?', faq4_a:'The 1-day plan costs only 99 rubles — enough to test everything. The Lite 1-day plan is even cheaper, but with server restrictions and no spoofer.',
+    faq5_q:'How is the software updated after a new devblog?', faq5_a:'Full version: updates ship within 24 hours after the game update, free and automatic. Lite: no auto-updates for new devblogs — only OldRust, MyRust, MagixRust, SunfireRust, CompanyRust are supported.',
+    faq6_q:'How is Lite different from the full version?', faq6_a:'Lite: OldRust, MyRust, MagixRust, SunfireRust, CompanyRust only, no built-in HWID spoofer, no tech support and no auto-updates for new devblogs. 30% cheaper.',
     cta_title:'Ready to start?', cta_sub:'Join the MegaBoss.wtf community and get full control over the game.', cta_btn:'Buy',
     contact_label:'Contact', contact_title:'Support', contact_note:'Tech support only for the full version. Lite — no support.',
     footer_copy:'© 2026 MegaBoss.wtf. All rights reserved.', footer_policy:'Policy',
@@ -904,7 +902,7 @@ const I18N = {
     acc_title:'Account', acc_user:'User', acc_status:'Status', acc_sub:'Subscription',
     acc_settings:'Settings', acc_subs:'Subscriptions', acc_history:'History', acc_logout:'Log out',
     buy_title:'Checkout', buy_copy_nick:'Copy nickname', buy_instant:'Instant purchase', buy_shop:'Via store', buy_cancel:'Cancel',
-    buy_lite_notice:'Lite: devblogs 240–266 only, no built-in HWID spoofer, no support.',
+    buy_lite_notice:'Lite: OldRust, MyRust, MagixRust, SunfireRust, CompanyRust only, no built-in HWID spoofer, no support.',
     buy_crypto:'Discord megabro69',
     fp_title:'Pay via FunPay', fp_sub:'Read this before you proceed', fp_warn_title:'Warning: slow method',
     fp_warn_1:'FunPay processes orders <b>manually</b> — delivery delay up to <b>2 days</b>.',
@@ -983,13 +981,14 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 /* ==================== ПРОДУКТЫ / ЦЕНЫ ==================== */
+/* LITE теперь 0.7 от полной цены (на 30% дешевле) */
 const PLANS = [
-  { key:'duration_1d',      full:99,   lite:49,  popular:false },
-  { key:'duration_7d',      full:300,  lite:150, popular:false },
-  { key:'duration_30d',     full:500,  lite:250, popular:true  },
-  { key:'duration_90d',     full:1000, lite:500, popular:false },
-  { key:'duration_forever', full:1500, lite:750, popular:false },
-  { key:'duration_alpha',   full:800,  lite:400, popular:false }
+  { key:'duration_1d',      full:99,   lite:Math.round(99*0.7),   popular:false },
+  { key:'duration_7d',      full:300,  lite:Math.round(300*0.7),  popular:false },
+  { key:'duration_30d',     full:500,  lite:Math.round(500*0.7),  popular:true  },
+  { key:'duration_90d',     full:1000, lite:Math.round(1000*0.7), popular:false },
+  { key:'duration_forever', full:1500, lite:Math.round(1500*0.7), popular:false },
+  { key:'duration_alpha',   full:800,  lite:Math.round(800*0.7),  popular:false }
 ];
 let currentProduct = localStorage.getItem('mb_product') || 'full';
 const PRODUCT_NAMES = { full:'MegaBoss.wtf', lite:'MegaBoss.wtf Lite' };
@@ -1049,8 +1048,8 @@ function applyProductUI(){
   const devNum = document.getElementById('statDevNum');
   const spoofNum = document.getElementById('statSpoofNum');
   if(devNum){
-    devNum.textContent = isLite ? '7' : '15';
-    if(isLite) devNum.innerHTML = '7';
+    devNum.textContent = isLite ? '5' : '15';
+    if(isLite) devNum.innerHTML = '5';
     else devNum.innerHTML = '15';
   }
   if(spoofNum){
@@ -1170,7 +1169,6 @@ window.addEventListener('scroll', ()=>{
 // Animated counters (hero stats)
 document.querySelectorAll('.num[data-count]').forEach(counter => {
   const target = parseInt(counter.dataset.count);
-  // skip if currently showing lite stat text
   if(counter.id === 'statDevNum' || counter.id === 'statSpoofNum') return;
   let current = 0;
   const duration = 1200, stepTime = 16, steps = duration/stepTime, increment = target/steps;
@@ -1263,7 +1261,7 @@ document.addEventListener('click', function(e){
 });
 
 let currentBuyPriceRub = 0;
-const TELEGRAM_STAR_FUNPAY_RATE_RUB = 1.51; // ориентир, не live-курс
+const TELEGRAM_STAR_FUNPAY_RATE_RUB = 1.51;
 function getTelegramStarsAmount(priceRub){ return Math.ceil(priceRub / TELEGRAM_STAR_FUNPAY_RATE_RUB); }
 function updateTelegramStarsAmount(){
   const el = document.getElementById('buyStarsAmount');
@@ -1285,7 +1283,6 @@ function openBuyModal(event, plan, priceRub){
   document.getElementById('buyPlan').textContent = plan;
   document.getElementById('buyPrice').textContent = formatPrice(priceRub);
   updateTelegramStarsAmount();
-  // Lite notice
   const ln = document.getElementById('buyLiteNotice');
   if(ln) ln.style.display = currentProduct==='lite' ? 'block' : 'none';
   const m = document.getElementById('buyModal'); m.style.display='flex';
