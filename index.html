@@ -143,7 +143,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .lite-lock{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;font-size:10px;font-weight:700;font-family:var(--mono);letter-spacing:.5px;text-transform:uppercase;background:rgba(255,77,77,.1);border:1px solid rgba(255,77,77,.3);color:#ffb3b3}
 .lite-lock.ok{background:rgba(0,230,57,.08);border-color:rgba(0,230,57,.25);color:#9dffb4}
 
-/* LITE WARN */
 .lite-warning{display:none;background:rgba(255,77,77,0.06);border:1px solid rgba(255,77,77,0.3);border-radius:16px;padding:20px 24px;margin-top:20px;text-align:left}
 .lite-warning.show{display:block}
 .lite-warning h4{color:#ffb3b3;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;font-family:var(--mono);display:flex;align-items:center;gap:8px}
@@ -153,7 +152,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .lite-warning li.ok::before{content:'✓';color:var(--green)}
 .lite-warning li.ok{color:rgba(255,255,255,.8)}
 
-/* LITE BANNER */
 .lite-banner-inner{display:none;align-items:flex-start;gap:16px;width:100%;padding:20px 24px;border-radius:16px;background:rgba(255,77,77,.06);border:1px solid rgba(255,77,77,.25);margin-bottom:32px}
 .lite-banner-inner.show{display:flex}
 .lite-banner-icon{width:42px;height:42px;flex-shrink:0;border-radius:12px;display:flex;align-items:center;justify-content:center;background:rgba(255,77,77,.12);color:#ff8a8a;font-size:18px}
@@ -186,7 +184,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .feature-icon-wrapper svg{width:24px;height:24px;filter:drop-shadow(0 0 10px rgba(93,120,255,0.5))}
 .feature-card h3{font-size:16px;font-weight:800;margin-bottom:20px;letter-spacing:1px;text-transform:uppercase;font-family:var(--sans);background:linear-gradient(135deg,#fff,var(--dim));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-/* OFFLINE FEATURES (LITE) */
 .feature-card.off{opacity:.5;filter:grayscale(.4)}
 .feature-card.off .feature-icon-wrapper{color:var(--dim)}
 .feature-card .fc-lock{position:absolute;top:10px;right:10px;z-index:3}
@@ -332,6 +329,22 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 .package-glow{position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(93,120,255,0.1) 0%,transparent 70%);opacity:0;transition:opacity 0.4s ease;pointer-events:none;z-index:1}
 .package-card:hover .package-glow{opacity:1}
 
+/* ==================== PROMO ==================== */
+.promo-block{margin:14px 0 18px;text-align:left;padding:14px;border-radius:14px;background:rgba(93,120,255,.05);border:1px dashed rgba(93,120,255,.3)}
+.promo-block label{display:block;font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--dim);font-family:var(--mono);margin-bottom:8px}
+.promo-row{display:flex;gap:8px}
+.promo-row input{flex:1;padding:11px 14px;border-radius:10px;border:1px solid var(--border);background:rgba(0,0,0,.35);color:#fff;font-size:13px;font-family:var(--mono);outline:none;transition:.25s;letter-spacing:1px;text-transform:uppercase}
+.promo-row input:focus{border-color:rgba(93,120,255,.5);box-shadow:0 0 16px rgba(93,120,255,.12)}
+.promo-row button{padding:11px 18px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-weight:700;font-size:12px;font-family:var(--sans);cursor:pointer;transition:.25s;white-space:nowrap;box-shadow:0 0 20px var(--accent-glow)}
+.promo-row button:hover{background:#4a63e0;transform:scale(1.03)}
+.promo-row .promo-clear{background:rgba(255,255,255,.05);border:1px solid var(--border);box-shadow:none;color:var(--dim);padding:11px 14px}
+.promo-row .promo-clear:hover{background:rgba(255,77,77,.12);border-color:rgba(255,77,77,.4);color:#ffb3b3;transform:none}
+.promo-status{font-size:11px;font-family:var(--mono);margin-top:8px;min-height:14px;letter-spacing:.4px}
+.promo-status.ok{color:var(--green)}
+.promo-status.err{color:var(--red)}
+.promo-old-price{font-size:13px;color:var(--dim);text-decoration:line-through;margin-right:8px;font-family:var(--mono)}
+.promo-badge{display:inline-block;font-size:10px;font-weight:800;letter-spacing:1px;padding:3px 8px;border-radius:99px;background:rgba(0,230,57,.12);border:1px solid rgba(0,230,57,.35);color:#9dffb4;font-family:var(--mono);margin-left:8px;vertical-align:middle}
+
 @media(max-width:1180px){.header-nav a{padding:8px 6px;font-size:12px}.header-nav{gap:2px}}
 @media(max-width:1100px){.features-grid{grid-template-columns:repeat(2,1fr)}.price-grid{grid-template-columns:repeat(2,1fr);max-width:700px}.package-grid{grid-template-columns:repeat(2,1fr)}.header{flex-wrap:wrap}}
 @media(max-width:900px){.steps{grid-template-columns:1fr}}
@@ -422,7 +435,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
         <div class="scroll-indicator visible" id="scrollIndicator"><div class="mouse"><div class="wheel"></div></div></div>
     </section>
 
-    <!-- PRODUCT PICKER -->
     <section class="product-picker reveal" id="products">
         <div class="product-picker-inner">
             <div class="product-picker-label" data-i18n="pick_label">Выберите продукт</div>
@@ -465,7 +477,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
         </div>
     </section>
 
-    <!-- LITE BANNER -->
     <div class="lite-banner-inner" id="liteBanner">
         <div class="lite-banner-icon"><i class="fas fa-info-circle"></i></div>
         <div class="lite-banner-text">
@@ -642,7 +653,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
     </footer>
 </div>
 
-<!-- РЕГИСТРАЦИЯ -->
 <div class="register-modal" id="registerModal">
     <div class="modal-content">
         <div class="modal-icon"><span>M</span></div>
@@ -657,7 +667,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
     </div>
 </div>
 
-<!-- АККАУНТ -->
 <div class="account-panel" id="accountPanel">
     <div id="account-stars"><canvas id="accountStarsCanvas"></canvas></div>
     <div class="account-panel-header">
@@ -687,13 +696,30 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
 
 <div class="toast" id="toast"><div class="toast-icon">✓</div><span id="toastMessage">Готово</span></div>
 
-<!-- ПОКУПКА -->
+<!-- ПОКУПКА + ПРОМОКОД -->
 <div id="buyModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(12px);z-index:10000;align-items:center;justify-content:center;">
     <div style="background:linear-gradient(160deg,rgba(26,19,40,0.08) 0%,rgba(14,10,22,0.03) 100%);border:1px solid rgba(93,120,255,0.3);border-radius:20px;padding:40px;text-align:center;max-width:560px;width:92%;box-shadow:0 40px 80px -30px rgba(0,0,0,0.55),0 0 0 1px rgba(255,255,255,0.08) inset,0 1px 0 rgba(255,255,255,0.15) inset,inset 0 0 30px rgba(93,120,255,0.08);transform:scale(0.9) translateY(20px);transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);">
         <div style="margin-bottom:16px;"><div style="width:64px;height:64px;margin:0 auto;background:rgba(93,120,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(93,120,255,0.3);"><span style="font-size:28px;color:var(--accent);font-family:var(--mono);font-weight:700;">M</span></div></div>
         <h2 style="font-size:24px;font-weight:800;color:#fff;margin:0 0 6px;font-family:var(--sans);" data-i18n="buy_title">Оформление покупки</h2>
         <p style="color:rgba(255,255,255,0.5);font-size:14px;margin:0 0 6px;font-family:var(--sans);"><span id="buyProduct" style="color:#fff;font-weight:600;"></span></p>
-        <p style="color:rgba(255,255,255,0.5);font-size:14px;margin:0 0 12px;font-family:var(--sans);"><span id="buyPlan">30 Дней</span> — <span id="buyPrice" style="color:var(--accent);font-weight:700;">500 ₽</span></p>
+        <p style="color:rgba(255,255,255,0.5);font-size:14px;margin:0 0 4px;font-family:var(--sans);">
+            <span id="buyPlan">30 Дней</span> —
+            <span id="promoOldPrice" class="promo-old-price" style="display:none;"></span>
+            <span id="buyPrice" style="color:var(--accent);font-weight:700;">500 ₽</span>
+            <span id="promoBadge" class="promo-badge" style="display:none;">-30%</span>
+        </p>
+
+        <!-- ПРОМОКОД -->
+        <div class="promo-block">
+            <label data-i18n="promo_label">Промокод</label>
+            <div class="promo-row">
+                <input type="text" id="promoInput" placeholder="Promo" autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();applyPromo();}">
+                <button type="button" onclick="applyPromo()" data-i18n="promo_apply">Применить</button>
+                <button type="button" class="promo-clear" onclick="clearPromo()" title="Сбросить">✕</button>
+            </div>
+            <div class="promo-status" id="promoStatus"></div>
+        </div>
+
         <p id="buyLiteNotice" style="display:none;color:#ffb3b3;font-size:12px;font-family:var(--mono);margin:0 0 20px;padding:8px 12px;background:rgba(255,77,77,.08);border:1px solid rgba(255,77,77,.3);border-radius:8px;" data-i18n="buy_lite_notice">Lite: только OldRust, MyRust, MagixRust, SunfireRust, CompanyRust, без встроенного HWID-спуфера и без поддержки.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;">
             <a href="#" onclick="event.preventDefault();navigator.clipboard.writeText('megabro69');closeBuyModal();showToast(t('toast_discord_copied'));" style="flex:1;min-width:140px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;border:1px solid rgba(93,120,255,0.2);border-radius:16px;background:rgba(0,0,0,0.2);text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(93,120,255,0.5)';this.style.background='rgba(93,120,255,0.06)'" onmouseout="this.style.borderColor='rgba(93,120,255,0.2)';this.style.background='rgba(0,0,0,0.2)'">
@@ -711,14 +737,12 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
                 <div style="color:#fff;font-weight:600;font-size:14px;font-family:var(--sans);">FunPay</div>
                 <div style="color:rgba(255,255,255,0.4);font-size:11px;font-family:var(--sans);" data-i18n="buy_shop">Через магазин</div>
             </a>
-            <!-- TELEGRAM STARS -->
             <a href="#" onclick="event.preventDefault();copyTelegramStars();" style="flex:1;min-width:140px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;border:1px solid rgba(255,205,70,0.3);border-radius:16px;background:rgba(0,0,0,0.2);text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(255,205,70,0.7)';this.style.background='rgba(255,205,70,0.06)'" onmouseout="this.style.borderColor='rgba(255,205,70,0.3)';this.style.background='rgba(0,0,0,0.2)'">
                 <div style="font-size:32px;line-height:1;color:#ffcd46;">⭐</div>
                 <div style="color:#fff;font-weight:600;font-size:14px;font-family:var(--sans);">Telegram Stars</div>
                 <div id="buyStarsAmount" style="color:#ffcd46;font-size:12px;font-weight:700;font-family:var(--mono);">— ⭐</div>
                 <div style="color:rgba(255,255,255,0.4);font-size:11px;font-family:var(--sans);">Скопировать сумму</div>
             </a>
-            <!-- CRYPTO -->
             <a href="#" onclick="event.preventDefault();closeBuyModal();openCryptoModal();" style="flex:1;min-width:140px;display:flex;flex-direction:column;align-items:center;gap:10px;padding:20px 16px;border:1px solid rgba(247,147,26,0.25);border-radius:16px;background:rgba(0,0,0,0.2);text-decoration:none;transition:border-color 0.2s,background 0.2s;" onmouseover="this.style.borderColor='rgba(247,147,26,0.6)';this.style.background='rgba(247,147,26,0.06)'" onmouseout="this.style.borderColor='rgba(247,147,26,0.25)';this.style.background='rgba(0,0,0,0.2)'">
                 <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32" style="color:#f7931a;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.2 8.9c.2-1.3-.8-2-2.1-2.4l.4-1.7-1.1-.3-.4 1.6c-.3-.1-.6-.1-.9-.2l.4-1.6-1.1-.3-.4 1.7c-.2-.1-.5-.1-.7-.2l-1.5-.4-.3 1.2s.8.2.8.2c.5.1.5.4.5.6l-1 4.1c0 .1-.1.3-.4.2 0 0-.8-.2-.8-.2l-.6 1.3 1.4.4c.3.1.5.1.8.2l-.4 1.7 1.1.3.4-1.7c.3.1.5.2.8.2l-.4 1.7 1.1.3.4-1.7c1.9.4 3.2.2 3.8-1.5.5-1.3 0-2.1-.9-2.6.7-.2 1.2-.6 1.3-1.5zm-2.5 3.3c-.3 1.4-2.6.6-3.4.4l.6-2.4c.8.2 3.1.6 2.8 2zm.3-3.3c-.3 1.2-2.2.6-2.8.4l.5-2.2c.6.1 2.6.5 2.3 1.8z"/></svg>
                 <div style="color:#fff;font-weight:600;font-size:14px;font-family:var(--sans);">Crypto</div>
@@ -729,7 +753,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
     </div>
 </div>
 
-<!-- FUNPAY -->
 <div class="fp-modal" id="funPayModal">
     <div class="fp-content" id="fpContent">
         <div class="fp-icon"><span>₽</span></div>
@@ -752,7 +775,6 @@ body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;backg
     </div>
 </div>
 
-<!-- CRYPTO -->
 <div class="fp-modal" id="cryptoModal">
     <div class="fp-content" id="cryptoContent" style="border-color:rgba(247,147,26,.35);box-shadow:0 40px 80px -30px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.06) inset,inset 0 0 30px rgba(247,147,26,.08);">
         <div class="fp-icon" style="background:rgba(247,147,26,.12);border-color:rgba(247,147,26,.4);"><span style="color:#f7931a;">₿</span></div>
@@ -850,7 +872,13 @@ const I18N = {
     toast_name_taken:'Это имя занято. Выберите другое', toast_name_invalid:'Введите корректный ник (мин. 2 символа)',
     toast_pass_invalid:'Пароль должен быть минимум 6 символов',
     duration_1d:'1 День', duration_7d:'7 Дней', duration_30d:'30 Дней', duration_90d:'90 Дней',
-    duration_forever:'НАВСЕГДА', duration_alpha:'АЛЬФА', buy_btn:'Купить', popular:'выгодней'
+    duration_forever:'НАВСЕГДА', duration_alpha:'АЛЬФА', buy_btn:'Купить', popular:'выгодней',
+    promo_label:'Промокод', promo_apply:'Применить',
+    promo_ok:'Промокод применён: скидка {p}%',
+    promo_err:'Неверный промокод',
+    promo_empty:'Введите промокод',
+    promo_cleared:'Промокод удалён',
+    promo_stars_copied:'Сумма {n} ⭐ скопирована'
   },
   en: {
     nav_features:'Features', nav_package:'Addons', nav_pricing:'Pricing', nav_faq:'FAQ', nav_contacts:'Contacts',
@@ -922,11 +950,21 @@ const I18N = {
     toast_name_taken:'This name is taken. Choose another', toast_name_invalid:'Enter a valid nickname (min. 2 chars)',
     toast_pass_invalid:'Password must be at least 6 characters',
     duration_1d:'1 Day', duration_7d:'7 Days', duration_30d:'30 Days', duration_90d:'90 Days',
-    duration_forever:'FOREVER', duration_alpha:'ALPHA', buy_btn:'Buy', popular:'best value'
+    duration_forever:'FOREVER', duration_alpha:'ALPHA', buy_btn:'Buy', popular:'best value',
+    promo_label:'Promo code', promo_apply:'Apply',
+    promo_ok:'Promo applied: {p}% off',
+    promo_err:'Invalid promo code',
+    promo_empty:'Enter a promo code',
+    promo_cleared:'Promo removed',
+    promo_stars_copied:'Amount {n} ⭐ copied'
   }
 };
 let currentLang = localStorage.getItem('mb_lang') || 'ru';
-function t(k){ return (I18N[currentLang] && I18N[currentLang][k]) || k; }
+function t(k, vars){
+  let s = (I18N[currentLang] && I18N[currentLang][k]) || k;
+  if(vars){ Object.keys(vars).forEach(key=>{ s = s.replace(new RegExp('\\{'+key+'\\}','g'), vars[key]); }); }
+  return s;
+}
 function applyLang(){
   document.documentElement.lang = currentLang;
   document.querySelectorAll('[data-i18n]').forEach(el=>{ el.textContent = t(el.getAttribute('data-i18n')); });
@@ -935,6 +973,7 @@ function applyLang(){
   document.getElementById('lang-en').classList.toggle('active', currentLang==='en');
   renderPrices();
   applyProductUI();
+  updateBuyPriceDisplay();
 }
 function setLang(lang){ currentLang = lang; localStorage.setItem('mb_lang', lang); applyLang(); }
 
@@ -963,11 +1002,7 @@ function selectCurrency(code){
   updateCurrencyUI();
   renderPrices();
   closeCurrencyDropdown();
-  const buyModal = document.getElementById('buyModal');
-  if(buyModal && buyModal.style.display === 'flex'){
-    document.getElementById('buyPrice').textContent = formatPrice(currentBuyPriceRub);
-    updateTelegramStarsAmount();
-  }
+  updateBuyPriceDisplay();
 }
 function toggleCurrencyDropdown(e){ e.stopPropagation(); document.getElementById('currencyDropdown').classList.toggle('open'); }
 function closeCurrencyDropdown(){ document.getElementById('currencyDropdown').classList.remove('open'); }
@@ -981,7 +1016,6 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 /* ==================== ПРОДУКТЫ / ЦЕНЫ ==================== */
-/* LITE теперь 0.7 от полной цены (на 30% дешевле) */
 const PLANS = [
   { key:'duration_1d',      full:99,   lite:Math.round(99*0.7),   popular:false },
   { key:'duration_7d',      full:300,  lite:Math.round(300*0.7),  popular:false },
@@ -1009,60 +1043,34 @@ function renderPrices(){
   }).join('');
 }
 
-/* ==================== LITE RESTRICTIONS UI ==================== */
+/* ==================== LITE UI ==================== */
 function applyProductUI(){
   const isLite = currentProduct === 'lite';
-
-  // Product tiles active state
   document.querySelectorAll('.product-tile').forEach(tile=>{
     tile.classList.toggle('active', tile.dataset.product === currentProduct);
   });
-
-  // Lite warning & banner
   const lw = document.getElementById('liteWarning'); if(lw) lw.classList.toggle('show', isLite);
   const lb = document.getElementById('liteBanner'); if(lb) lb.classList.toggle('show', isLite);
-
-  // Devblog marquees
   const mf = document.getElementById('marqueeFull'); if(mf) mf.style.display = isLite ? 'none' : 'block';
   const ml = document.getElementById('marqueeLite'); if(ml) ml.style.display = isLite ? 'block' : 'none';
-
-  // Security banner: hide HWID Bypass / Ultimate Trace tags in Lite
   const bypassTags = document.getElementById('securityTagsBypass');
   if(bypassTags) bypassTags.style.display = isLite ? 'none' : 'flex';
-
-  // Package cards: grey out HWID Bypass and Support in Lite
   ['pkgHwid','pkgSupport'].forEach(id=>{
-    const el = document.getElementById(id);
-    if(!el) return;
+    const el = document.getElementById(id); if(!el) return;
     el.classList.toggle('off', isLite);
     let lock = el.querySelector('.fc-lock');
     if(isLite && !lock){
-      lock = document.createElement('div');
-      lock.className = 'fc-lock lite-lock';
-      lock.textContent = '✕ Lite';
-      el.appendChild(lock);
+      lock = document.createElement('div'); lock.className = 'fc-lock lite-lock'; lock.textContent = '✕ Lite'; el.appendChild(lock);
     } else if(!isLite && lock){ lock.remove(); }
   });
-
-  // Hero stats: devblogs count & bypass count change in Lite
   const devNum = document.getElementById('statDevNum');
   const spoofNum = document.getElementById('statSpoofNum');
-  if(devNum){
-    devNum.textContent = isLite ? '5' : '15';
-    if(isLite) devNum.innerHTML = '5';
-    else devNum.innerHTML = '15';
-  }
+  if(devNum){ devNum.textContent = isLite ? '5' : '15'; }
   if(spoofNum){
-    if(isLite){
-      spoofNum.textContent = '✕';
-      spoofNum.style.color = 'var(--red)';
-    } else {
-      spoofNum.innerHTML = '200<span>+</span>';
-      spoofNum.style.color = '#fff';
-    }
+    if(isLite){ spoofNum.textContent = '✕'; spoofNum.style.color = 'var(--red)'; }
+    else { spoofNum.innerHTML = '200<span>+</span>'; spoofNum.style.color = '#fff'; }
   }
 }
-
 function selectProduct(prod){
   currentProduct = prod;
   localStorage.setItem('mb_product', prod);
@@ -1166,7 +1174,6 @@ window.addEventListener('scroll', ()=>{
   else { scrollIndicator.style.opacity='0.6'; scrollIndicator.style.bottom='40px'; }
 });
 
-// Animated counters (hero stats)
 document.querySelectorAll('.num[data-count]').forEach(counter => {
   const target = parseInt(counter.dataset.count);
   if(counter.id === 'statDevNum' || counter.id === 'statSpoofNum') return;
@@ -1197,7 +1204,8 @@ function showToast(message){
   const toast = document.getElementById('toast');
   document.getElementById('toastMessage').textContent = message;
   toast.classList.add('show');
-  setTimeout(()=>toast.classList.remove('show'), 3000);
+  clearTimeout(window.__toastT);
+  window.__toastT = setTimeout(()=>toast.classList.remove('show'), 3000);
 }
 function copyDiscord(e){ e.preventDefault(); navigator.clipboard.writeText('megabro69'); showToast(t('toast_discord_copied')); }
 
@@ -1260,29 +1268,84 @@ document.addEventListener('click', function(e){
   }
 });
 
+/* ==================== ПОКУПКА + ПРОМО ==================== */
 let currentBuyPriceRub = 0;
+let currentBuyPlanLabel = '';
+let currentPromo = null; // { code, percent }
+const PROMOS = { werty: 30 };
 const TELEGRAM_STAR_FUNPAY_RATE_RUB = 1.51;
 function getTelegramStarsAmount(priceRub){ return Math.ceil(priceRub / TELEGRAM_STAR_FUNPAY_RATE_RUB); }
 function updateTelegramStarsAmount(){
   const el = document.getElementById('buyStarsAmount');
-  if(el) el.textContent = getTelegramStarsAmount(currentBuyPriceRub).toLocaleString('ru-RU') + ' ⭐';
-}
-async function copyTelegramStars(){
-  const amount = getTelegramStarsAmount(currentBuyPriceRub);
-  try {
-    await navigator.clipboard.writeText(String(amount));
-    showToast('Сумма ' + amount + ' ⭐ скопирована');
-  } catch(e) {
-    showToast('Количество для оплаты: ' + amount + ' ⭐');
+  if(el){
+    const finalPrice = getFinalPriceRub();
+    el.textContent = getTelegramStarsAmount(finalPrice).toLocaleString('ru-RU') + ' ⭐';
   }
+}
+function getFinalPriceRub(){
+  if(currentPromo && currentPromo.percent){
+    return Math.max(0, Math.round(currentBuyPriceRub * (1 - currentPromo.percent/100)));
+  }
+  return currentBuyPriceRub;
+}
+function updateBuyPriceDisplay(){
+  const priceEl = document.getElementById('buyPrice');
+  const oldEl = document.getElementById('promoOldPrice');
+  const badgeEl = document.getElementById('promoBadge');
+  if(!priceEl) return;
+  if(currentPromo && currentPromo.percent){
+    const finalPrice = getFinalPriceRub();
+    priceEl.textContent = formatPrice(finalPrice);
+    oldEl.textContent = formatPrice(currentBuyPriceRub);
+    oldEl.style.display = 'inline';
+    badgeEl.textContent = '-' + currentPromo.percent + '%';
+    badgeEl.style.display = 'inline-block';
+  } else {
+    priceEl.textContent = formatPrice(currentBuyPriceRub);
+    oldEl.style.display = 'none';
+    badgeEl.style.display = 'none';
+  }
+  updateTelegramStarsAmount();
+}
+function setPromoStatus(msg, type){
+  const el = document.getElementById('promoStatus');
+  if(!el) return;
+  el.textContent = msg || '';
+  el.className = 'promo-status' + (type ? ' ' + type : '');
+}
+function applyPromo(){
+  const input = document.getElementById('promoInput');
+  if(!input) return;
+  const code = (input.value || '').trim().toLowerCase();
+  if(!code){ setPromoStatus(t('promo_empty'), 'err'); return; }
+  if(PROMOS.hasOwnProperty(code)){
+    currentPromo = { code, percent: PROMOS[code] };
+    setPromoStatus(t('promo_ok', { p: PROMOS[code] }), 'ok');
+    updateBuyPriceDisplay();
+  } else {
+    currentPromo = null;
+    setPromoStatus(t('promo_err'), 'err');
+    updateBuyPriceDisplay();
+  }
+}
+function clearPromo(){
+  currentPromo = null;
+  const input = document.getElementById('promoInput');
+  if(input) input.value = '';
+  setPromoStatus(t('promo_cleared'), '');
+  updateBuyPriceDisplay();
 }
 function openBuyModal(event, plan, priceRub){
   if(event) event.preventDefault();
   currentBuyPriceRub = Number(priceRub) || 0;
+  currentBuyPlanLabel = plan;
+  currentPromo = null;
+  const input = document.getElementById('promoInput');
+  if(input) input.value = '';
+  setPromoStatus('', '');
   document.getElementById('buyProduct').textContent = PRODUCT_NAMES[currentProduct];
   document.getElementById('buyPlan').textContent = plan;
-  document.getElementById('buyPrice').textContent = formatPrice(priceRub);
-  updateTelegramStarsAmount();
+  updateBuyPriceDisplay();
   const ln = document.getElementById('buyLiteNotice');
   if(ln) ln.style.display = currentProduct==='lite' ? 'block' : 'none';
   const m = document.getElementById('buyModal'); m.style.display='flex';
@@ -1292,9 +1355,19 @@ function openBuyModal(event, plan, priceRub){
 function closeBuyModal(){
   const m = document.getElementById('buyModal'); const c = m.querySelector('div');
   c.style.transform = 'scale(0.9) translateY(20px)';
-  setTimeout(()=>{ m.style.display='none'; c.style.transform='scale(0.9) translateY(20px)'; }, 300);
+  setTimeout(()=>{ m.style.display='none'; c.style.transform='scale(0.9) translateY(20px)'; currentPromo = null; }, 300);
 }
 document.getElementById('buyModal').addEventListener('click', function(e){ if(e.target===this) closeBuyModal(); });
+
+async function copyTelegramStars(){
+  const amount = getTelegramStarsAmount(getFinalPriceRub());
+  try {
+    await navigator.clipboard.writeText(String(amount));
+    showToast(t('promo_stars_copied', { n: amount }));
+  } catch(e) {
+    showToast('⭐ ' + amount);
+  }
+}
 
 function openFunPayModal(){
   const m = document.getElementById('funPayModal'); m.style.display='flex';
@@ -1306,7 +1379,6 @@ function closeFunPayModal(){
 }
 document.getElementById('funPayModal').addEventListener('click', function(e){ if(e.target===this) closeFunPayModal(); });
 
-/* ==================== CRYPTO ==================== */
 function openCryptoModal(){
   const m = document.getElementById('cryptoModal'); m.style.display='flex';
   setTimeout(()=>document.getElementById('cryptoContent').classList.add('open'), 50);
@@ -1329,7 +1401,6 @@ document.addEventListener('keydown', e=>{
   if(e.key==='Escape'){ closeBuyModal(); closeRegisterModal(); closeAccountPanel(); closeFunPayModal(); closeCryptoModal(); closeCurrencyDropdown(); }
 });
 
-/* init */
 applyLang();
 selectProduct(currentProduct);
 updateCurrencyUI();
